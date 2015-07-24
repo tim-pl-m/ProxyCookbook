@@ -5,21 +5,13 @@ driver:
 provisioner:
   name: chef_zero
 
-# platforms:
-  # - name: centos65
-  #   driver:
-  #     box: learningchef/centos65
-  #     box_url: learningchef/centos65
-  #     network:
-  #       - ["private_network", {ip: "192.168.33.7"}]
 platforms:
-  - name: adesso/centos7
-    driver_config:
-      require_chef_omnibus: true
-      ssh:
-        insert_key: false
-      box: adesso/centos7
-      box_url: http://box.adesso.de/centos7.json
+  - name: centos65
+    driver:
+      box: learningchef/centos65
+      box_url: learningchef/centos65
+      network:
+        - ["private_network", {ip: "192.168.33.7"}]
 
 
 suites:
