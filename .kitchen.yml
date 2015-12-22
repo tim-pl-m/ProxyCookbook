@@ -6,12 +6,17 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: centos65
+  # name: ubuntu
+  - name: ubuntu
     driver:
-      box: learningchef/centos65
-      box_url: learningchef/centos65
-      network:
-        - ["private_network", {ip: "192.168.33.7"}]
+      box: opscode-ubuntu-12.04
+      box_url: http://files.vagrantup.com/precise32.box
+  # - name: centos65
+  #   driver:
+  #     box: learningchef/centos65
+  #     box_url: learningchef/centos65
+  #     network:
+  #       - ["private_network", {ip: "192.168.33.7"}]
 
 
 suites:
