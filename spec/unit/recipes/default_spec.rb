@@ -5,11 +5,13 @@
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
 require 'spec_helper'
-
+# require_relative '../spec_helper.rb'
 
 
 describe 'apache::default' do
-  chef_run = ChefSpec::ServerRunner.new.converge('apache::default')
+  # chef_run = ChefSpec::ServerRunner.new.converge('apache::default')
+  cached(:chef_run) { ChefSpec::ServerRunner.new.converge(described_recipe) }
+
 
   it 'installs apache2' do
     expect(chef_run).to install_package('httpd')
