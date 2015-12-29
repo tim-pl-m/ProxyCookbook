@@ -9,6 +9,7 @@ require 'spec_helper'
 
 
 describe 'apache::default' do
+  #TODO check why next (commented) line doesnt compile on mac, but does so on linux and windows(same dk,client,berks,...) 
   # chef_run = ChefSpec::ServerRunner.new.converge('apache::default')
   cached(:chef_run) { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
