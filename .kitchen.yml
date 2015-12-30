@@ -14,18 +14,20 @@ platforms:
   #     box: opscode-ubuntu-12.04
   #     box_url: http://files.vagrantup.com/precise32.box
 
-  - name: centos65
-    driver:
-      # box: learningchef/centos65
-      # box_url: learningchef/centos65
-      # box: opscode-ubuntu-12.04
-      # box_url: http://files.vagrantup.com/precise32.box
-      box: centos65-32bit
-      box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5-i386_chef-provisionerless.box
-      # username: root
-      # password: root
-  #     network:
-  #       - ["private_network", {ip: "192.168.33.7"}]
+  - name: centos-6.6
+
+  # - name: centos65
+  #   driver:
+  #     # box: learningchef/centos65
+  #     # box_url: learningchef/centos65
+  #     # box: opscode-ubuntu-12.04
+  #     # box_url: http://files.vagrantup.com/precise32.box
+  #     box: centos65-32bit
+  #     box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5-i386_chef-provisionerless.box
+  #     # username: root
+  #     # password: root
+  # #     network:
+  # #       - ["private_network", {ip: "192.168.33.7"}]
 
 
 suites:

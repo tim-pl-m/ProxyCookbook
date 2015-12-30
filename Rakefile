@@ -1,5 +1,8 @@
 #!/usr/bin/env rake
 
+# Rakefile
+require 'bundler/setup'
+
 # Style tests. Rubocop and Foodcritic
 # TODO activate style-tests
 
@@ -31,14 +34,32 @@
 # task style: ['style:chef', 'style:ruby']
 
 # Integration tests. Kitchen.ci
-namespace :integration do
-  begin
-    require 'kitchen/rake_tasks'
+#TODO consider vagrant-tests
 
-    desc 'Run kitchen integration tests'
-    Kitchen::RakeTasks.new
-  rescue LoadError, Kitchen::ClientError
-    puts '>>>>> Kitchen gem not loaded, omitting tasks' unless ENV['CI']
+# namespace :integration do
+#   begin
+#     require 'kitchen/rake_tasks'
+#
+#     desc 'Run kitchen integration tests'
+#     Kitchen::RakeTasks.new
+#   rescue LoadError, Kitchen::ClientError
+#     puts '>>>>> Kitchen gem not loaded, omitting tasks' unless ENV['CI']
+#   end
+# end
+
+namespace :integration do
+  # desc 'Run integration tests with kitchen-docker'
+  # task :docker do
+  #   require 'kitchen'
+  #   Kitchen.logger = Kitchen.default_file_logger
+  #   @loader = Kitchen::Loader::YAML.new(local_config: '.kitchen.docker.yml')
+  #   Kitchen::Config.new(loader: @loader).instances.each do |instance|
+  #     instance.test(:always)
+  #   end
+  # end
+  desc 'Run integration tests with kitchen-docker'
+  task :docker, [:regexp, :action] do |_t, args|
+    run_kitchen(args.action, args.regexp, local_config: '.kitchen.docker.yml')
   end
 end
 
