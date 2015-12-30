@@ -1,92 +1,54 @@
-#!/usr/bin/env rake
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
-# Rakefile
+#
+# Available Rake tasks:
+#
+# $ rake -T
+# rake integration:docker[regexp,action]   # Run tests with kitchen-docker
+# rake integration:vagrant[regexp,action]  # Run tests with kitchen-vagrant
+#
+# More info at https://github.com/ruby/rake/blob/master/doc/rakefile.rdoc
+#
+
 require 'bundler/setup'
 
-# Style tests. Rubocop and Foodcritic
-# TODO activate style-tests
-
-# namespace :style do
-#   begin
-#     require 'rubocop/rake_task'
-#     desc 'Run Ruby style checks'
-#     RuboCop::RakeTask.new(:ruby)
-#   rescue LoadError
-#     puts '>>>>> Rubocop gem not loaded, omitting tasks' unless ENV['CI']
-#   end
-#
-#   begin
-#     require 'foodcritic'
-#
-#     desc 'Run Chef style checks'
-#     FoodCritic::Rake::LintTask.new(:chef) do |t|
-#       t.options = {
-#         fail_tags: ['any'],
-#         exclude_paths: ['spec']
-#       }
-#     end
-#   rescue LoadError
-#     puts '>>>>> foodcritic gem not loaded, omitting tasks' unless ENV['CI']
-#   end
-# end
-#
-# desc 'Run all style checks'
-# task style: ['style:chef', 'style:ruby']
-
-# Integration tests. Kitchen.ci
-#TODO consider vagrant-tests
-
-# namespace :integration do
-#   begin
-#     require 'kitchen/rake_tasks'
-#
-#     desc 'Run kitchen integration tests'
-#     Kitchen::RakeTasks.new
-#   rescue LoadError, Kitchen::ClientError
-#     puts '>>>>> Kitchen gem not loaded, omitting tasks' unless ENV['CI']
-#   end
-# end
-
+desc 'Run Test Kitchen integration tests'
 namespace :integration do
-  # desc 'Run integration tests with kitchen-docker'
-  # task :docker do
-  #   require 'kitchen'
-  #   Kitchen.logger = Kitchen.default_file_logger
-  #   @loader = Kitchen::Loader::YAML.new(local_config: '.kitchen.docker.yml')
-  #   Kitchen::Config.new(loader: @loader).instances.each do |instance|
-  #     instance.test(:always)
-  #   end
-  # end
+  # Gets a collection of instances.
+  #
+  # @param regexp [String] regular expression to match against instance names.
+  # @param config [Hash] configuration values for the `Kitchen::Config` class.
+  # @return [Collection<Instance>] all instances.
+  def kitchen_instances(regexp, config)
+    instances = Kitchen::Config.new(config).instances
+    return instances if regexp.nil? || regexp == 'all'
+    instances.get_all(Regexp.new(regexp))
+  end
+
+  # Runs a test kitchen action against some instances.
+  #
+  # @param action [String] kitchen action to run (defaults to `'test'`).
+  # @param regexp [String] regular expression to match against instance names.
+  # @param loader_config [Hash] loader configuration options.
+  # @return void
+  def run_kitchen(action, regexp, loader_config = {})
+    action = 'test' if action.nil?
+    require 'kitchen'
+    Kitchen.logger = Kitchen.default_file_logger
+    config = { loader: Kitchen::Loader::YAML.new(loader_config) }
+    kitchen_instances(regexp, config).each { |i| i.send(action) }
+  end
+
+  desc 'Run integration tests with kitchen-vagrant'
+  task :vagrant, [:regexp, :action] do |_t, args|
+    run_kitchen(args.action, args.regexp)
+  end
+
   desc 'Run integration tests with kitchen-docker'
   task :docker, [:regexp, :action] do |_t, args|
     run_kitchen(args.action, args.regexp, local_config: '.kitchen.docker.yml')
   end
 end
 
-
-# Unit tests with rspec/chefspec
-# TODO activate rspec
-
-# namespace :unit do
-#   begin
-#     require 'rspec/core/rake_task'
-#     desc 'Run unit tests with RSpec/ChefSpec'
-#     RSpec::Core::RakeTask.new(:rspec) do |t|
-#       t.rspec_opts = [].tap do |a|
-#         a.push('--color')
-#         a.push('--format progress')
-#       end.join(' ')
-#     end
-#   rescue LoadError
-#     puts '>>>>> rspec gem not loaded, omitting tasks' unless ENV['CI']
-#   end
-# end
-#
-# task unit: ['unit:rspec']
-
-desc 'Run all tests on Travis'
-# task travis: %w(style unit)
-
-# Default
-task default: ['integration:kitchen:all']
-# task default: ['style', 'unit', 'integration:kitchen:all']
+task default: %w(integration:vagrant)
