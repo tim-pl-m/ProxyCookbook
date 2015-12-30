@@ -9,6 +9,7 @@ gem 'chef-sugar'
 # gem 'test-kitchen', '~> 1.2'
 gem 'kitchen-docker', '~> 2.1.0'
 gem 'rake'
+gem 'rspec'
 
 # group :integration do
 #   gem 'test-kitchen', '~> 1.2'
