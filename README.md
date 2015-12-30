@@ -1,4 +1,5 @@
 # apache cookbook
+[![Build Status](https://travis-ci.org/tim-pl-m/ProxyCookbook.svg?branch=master)](https://travis-ci.org/tim-pl-m/ProxyCookbook)
 
 This cookbook installs and configures a simple web site using the Apache HTTPD server.
 
