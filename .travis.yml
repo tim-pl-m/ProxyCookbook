@@ -1,20 +1,51 @@
-rvm:
-# - 2.0.0
-- 2.1
-# - 2.2
+rvm: 2.1
 
-sudo: true
+sudo: required
 
-# env:
-#   matrix:
-# # Split up the test-kitchen run to avoid exceeding 50 minutes:
-#   - KITCHEN_REGEXP=centos
-#   - KITCHEN_REGEXP=debian
-#   - KITCHEN_REGEXP=ubuntu
+addons:
+  apt:
+    sources:
+      - chef-current-precise
+    packages:
+      - chefdk
 
+install:
+  - echo "skip bundle install"
+  - sudo apt-get update -q
+  # - sudo apt-get install -q virtualbox --fix-missing
+  - sudo apt-get install dpkg-dev virtualbox-dkms --yes
+  - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+  - sudo dpkg -i vagrant_1.7.2_x86_64.deb
+  - bundle install
+
+services: docker
+
+# Ensure we make ChefDK's Ruby the default
 before_script:
-- source <(curl -sL https://raw.githubusercontent.com/zuazo/kitchen-in-travis/0.3.0/scripts/start_docker.sh)
+  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+  # We have to install chef-sugar for ChefSpec
+  - /opt/chefdk/embedded/bin/chef gem install chef-sugar
+  # Ensure kitchen-docker is available for testing
+  - /opt/chefdk/embedded/bin/chef gem install kitchen-docker
 
 script:
-- travis_retry bundle exec rake integration:docker
-# - travis_retry bundle exec rake integration:docker[$KITCHEN_REGEXP]
+  # - /opt/chefdk/embedded/bin/chef --version
+  # - /opt/chefdk/embedded/bin/rubocop --version
+  # - /opt/chefdk/embedded/bin/rubocop
+  # - /opt/chefdk/embedded/bin/foodcritic --version
+  # - /opt/chefdk/embedded/bin/foodcritic -f any . --exclude spec
+  # - /opt/chefdk/embedded/bin/bundle install
+  # - /opt/chefdk/embedded/bin/bundle exec rspec spec
+
+  - /opt/chefdk/embedded/bin/chef --version
+  #TODO fix rubocop
+  # - /opt/chefdk/embedded/bin/rubocop --version
+  # - /opt/chefdk/embedded/bin/rubocop
+  #TODO fix foodcritic
+  # - /opt/chefdk/embedded/bin/foodcritic --version
+  # - /opt/chefdk/embedded/bin/foodcritic . --exclude spec
+  - /opt/chefdk/embedded/bin/rspec spec
+  #TODO fix kitchen
+  # - KITCHEN_LOCAL_YAML=.kitchen.yml /opt/chefdk/embedded/bin/kitchen verify
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify
+  # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify smoke-war-stable-ubuntu-docker
