@@ -36,6 +36,8 @@ before_script:
 
 script:
   - cd c/cj
+  - ls
+  - pwd
 
   # - /opt/chefdk/embedded/bin/chef --version
   # - /opt/chefdk/embedded/bin/rubocop --version
