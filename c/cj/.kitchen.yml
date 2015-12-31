@@ -10,16 +10,17 @@ provisioner:
   data_bags_path: "data_bags"
 
 platforms:
-  - name: centos7
-    driver:
-      box: centos/7
-      box_check_update: false
-      ssh:
-        insert_key: false
-      network:
-        # auto_correct to allow to test both recipes in parallel
-        - ["forwarded_port", {guest: 8080, host: 8080, auto_correct: true}]
-        - ["private_network", {ip: "122.168.33.9"}]
+  - name: centos-7.0
+  # - name: centos7
+    # driver:
+    #   box: centos/7
+    #   box_check_update: false
+    #   ssh:
+    #     insert_key: false
+    #   network:
+    #     # auto_correct to allow to test both recipes in parallel
+    #     - ["forwarded_port", {guest: 8080, host: 8080, auto_correct: true}]
+    #     - ["private_network", {ip: "122.168.33.9"}]
 
 suites:
   - name: master_basic
