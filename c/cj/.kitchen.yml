@@ -35,7 +35,8 @@ suites:
       "ciexjenkins": {
         "install_plugins": false,
         "ad": {
-          "enabled": true,
+          "enabled": false,
+          # "enabled": true,
           "domain": "projekte.local",
           "server": "projekte-dc1.projekte.local",
           "site": "dc=projekte,dc=local",
