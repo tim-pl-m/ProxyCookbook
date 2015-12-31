@@ -9,7 +9,7 @@
 
 include_recipe "java::default"
 include_recipe "java::set_java_home"
-include_recipe "jenkins::master"
+# include_recipe "jenkins::master"
 # if node["ciexjenkins"]["install_plugins"]
 #   include_recipe "ciexjenkins::plugins"
 # end
