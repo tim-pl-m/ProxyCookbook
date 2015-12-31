@@ -1,8 +1,8 @@
-
+# rvm: 2.1
 rvm:
-  # - 1.9.3
+  - 1.9.3
   - 2.1
-  # - 2.2
+  - 2.2
   # - 2.3
 
 sudo: required
@@ -35,8 +35,6 @@ before_script:
   - /opt/chefdk/embedded/bin/chef gem install kitchen-docker
 
 script:
-  - cd c/cj
-
   # - /opt/chefdk/embedded/bin/chef --version
   # - /opt/chefdk/embedded/bin/rubocop --version
   # - /opt/chefdk/embedded/bin/rubocop

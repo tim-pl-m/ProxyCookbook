@@ -1,0 +1,6 @@
+# Configuration parameters: AllowURI, URISchemes.
+Metrics/LineLength:
+  Max: 100
+
+Style/StringLiterals:
+  Enabled: false
