@@ -56,5 +56,5 @@ script:
   # - /opt/chefdk/embedded/bin/foodcritic . --exclude spec
   # - /opt/chefdk/embedded/bin/rspec spec
   # - KITCHEN_LOCAL_YAML=.kitchen.yml /opt/chefdk/embedded/bin/kitchen verify
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify m
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen converge m
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify smoke-war-stable-ubuntu-docker
