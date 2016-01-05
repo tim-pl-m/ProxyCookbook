@@ -35,7 +35,7 @@ before_script:
   - /opt/chefdk/embedded/bin/chef gem install kitchen-docker
 
 script:
-  - cd c/cj
+  - cd c/cjOld
   - ls
   - pwd
 

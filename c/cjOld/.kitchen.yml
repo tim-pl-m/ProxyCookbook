@@ -10,6 +10,9 @@ provisioner:
   data_bags_path: "data_bags"
 
 platforms:
+  #tested on windows
+  # - name: centos7
+  # desired version; workin with docker
   - name: centos-7.0
     driver:
        network:
