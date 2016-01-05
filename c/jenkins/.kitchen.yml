@@ -1,14 +1,8 @@
+---
 driver:
   name: vagrant
-  customize:
-    cpus: 2
-    memory: 1024
-  network:
-    # Allow access to the Jenkins webui which is useful when troubleshooting
-    - - forwarded_port
-      - guest: 8080
-        host: 9090
-        auto_correct: true
+  # vagrantfiles:
+  #   - workaround_kitchen_vagrant_bug_181.rb
 
 provisioner:
   name: chef_zero
@@ -21,124 +15,60 @@ provisioner:
         host: localhost
         install_method: war
         mirror: http://mirrors.jenkins-ci.org
+  # encrypted_data_bag_secret_key_path: "enc_data_bag_secret"
+  # data_bags_path: "data_bags"
 
 platforms:
-  - name: ubuntu-14.04
-    run_list:
-      - apt::default
-      - jenkins::java
-  - name: centos-7.1
+  #tested on windows
+  # - name: centos7
+  # desired version; workin with docker
+  - name: centos-7.0
     run_list:
       - yum::default
       - jenkins::java
+    # driver:
+    #    network:
+    #       # auto_correct to allow to test both recipes in parallel
+    #       - ["forwarded_port", {guest: 8080, host: 8080, auto_correct: true}]
+    #       - ["private_network", {ip: "122.168.33.9"}]
+  # - name: centos7
+  #   driver:
+  #     box: centos/7
+  #     box_check_update: false
+  #     ssh:
+  #       insert_key: false
+  #     network:
+  #       # auto_correct to allow to test both recipes in parallel
+  #       - ["forwarded_port", {guest: 8080, host: 8080, auto_correct: true}]
+  #       - ["private_network", {ip: "122.168.33.9"}]
 
 suites:
-  #
-  # Smoke suite
-  #
   - name: smoke_package_latest
-    excludes: ubuntu-docker
     run_list: jenkins_smoke::default
     attributes:
       jenkins:
         master:
           install_method: package
-  - name: smoke_war_stable
-    run_list: jenkins_smoke::default
-    attributes:
-      jenkins:
-        master:
-          install_method: war
-          source: http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war
-  - name: smoke_war_latest
-    excludes: ubuntu-docker
-    run_list: jenkins_smoke::default
-    attributes:
-      jenkins:
-        master:
-          install_method: war
-          source: http://mirrors.jenkins-ci.org/war/latest/jenkins.war
-
-  #
-  # Authentication suites
-  #
-  - name: authentication_private_key
-    run_list: jenkins_authentication::private_key
-  - name: authentication_username_password
-    run_list: jenkins_authentication::username_password
-
-  #
-  # Command suites
-  #
-  - name: jenkins_command_execute
-    run_list: jenkins_command::execute
-
-  #
-  # Credentials suites
-  #
-  - name: jenkins_credentials_create
-    run_list: jenkins_credentials::create
-  - name: jenkins_credentials_delete
-    run_list: jenkins_credentials::delete
-
-  #
-  # Job suites
-  #
-  - name: jenkins_job_create
-    run_list:
-      - jenkins_job::create
-      - jenkins_job::create_folder
-  - name: jenkins_job_delete
-    run_list: jenkins_job::delete
-  - name: jenkins_job_disable
-    run_list: jenkins_job::disable
-  - name: jenkins_job_enable
-    run_list: jenkins_job::enable
-  - name: jenkins_job_build
-    run_list: jenkins_job::build
-
-  #
-  # Script suites
-  #
-  - name: jenkins_script
-    run_list: jenkins_script::execute
-
-  #
-  # Plugin suites
-  #
-  - name: jenkins_plugin_disable
-    run_list: jenkins_plugin::disable
-  - name: jenkins_plugin_enable
-    run_list: jenkins_plugin::enable
-  - name: jenkins_plugin_install
-    run_list: jenkins_plugin::install
-  - name: jenkins_plugin_uninstall
-    run_list: jenkins_plugin::uninstall
-
-  #
-  # Slave suites
-  #
-  - name: jenkins_slave_create
-    run_list:
-      - jenkins_slave::create_jnlp
-      - jenkins_slave::create_ssh
-  - name: jenkins_slave_delete
-    run_list:
-      - jenkins_slave::delete_jnlp
-      - jenkins_slave::delete_ssh
-  - name: jenkins_slave_connect
-    run_list: jenkins_slave::connect
-  - name: jenkins_slave_disconnect
-    run_list: jenkins_slave::disconnect
-  - name: jenkins_slave_online
-    run_list: jenkins_slave::online
-  - name: jenkins_slave_offline
-    run_list: jenkins_slave::offline
-
-  #
-  # User suites
-  #
-  - name: jenkins_user_create
-    run_list: jenkins_user::create
-  - name: jenkins_user_delete
-    run_list: jenkins_user::delete
+  # - name: master_basic
+  #   run_list:
+  #     - recipe[ciexjenkins::master]
+  #   attributes: {
+  #     "ciexjenkins": {
+  #       "install_plugins": false,
+  #       "ad": {
+  #         "enabled": true,
+  #         "domain": "projekte.local",
+  #         "server": "projekte-dc1.projekte.local",
+  #         "site": "dc=projekte,dc=local",
+  #         "bindName": "cn=ciex-user01,ou=CI-Extern,dc=projekte,dc=local"
+  #       }
+  #     }
+  #   }
+  # - name: plugins
+  #   run_list:
+  #     - recipe[ciexjenkins::master]
+  #   attributes: {
+  #     "ciexjenkins": {
+  #       "install_plugins": true
+  #     }
+  #   }
