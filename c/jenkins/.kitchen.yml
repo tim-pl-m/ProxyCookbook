@@ -3,6 +3,15 @@ driver:
   name: vagrant
   # vagrantfiles:
   #   - workaround_kitchen_vagrant_bug_181.rb
+  customize:
+    cpus: 2
+    memory: 1024
+  network:
+    # Allow access to the Jenkins webui which is useful when troubleshooting
+    - - forwarded_port
+      - guest: 8080
+        host: 9090
+        auto_correct: true
 
 provisioner:
   name: chef_zero
@@ -49,6 +58,13 @@ suites:
       jenkins:
         master:
           install_method: package
+  - name: smoke_war_stable
+    run_list: jenkins_smoke::default
+    attributes:
+      jenkins:
+        master:
+          install_method: war
+          source: http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war
   # - name: master_basic
   #   run_list:
   #     - recipe[ciexjenkins::master]
