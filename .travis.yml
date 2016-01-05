@@ -16,7 +16,7 @@ addons:
 
 install:
   - echo "skip bundle install"
-  #TODO delete vagrant-stuff
+  #TODO use vagrant, as soon feature https://github.com/travis-ci/travis-ci/issues/2191 is possible
   # - sudo apt-get update -q
   # - sudo apt-get install -q virtualbox --fix-missing
   # - sudo apt-get install dpkg-dev virtualbox-dkms --yes
@@ -56,7 +56,7 @@ script:
   #TODO fix foodcritic
   # - /opt/chefdk/embedded/bin/foodcritic --version
   # - /opt/chefdk/embedded/bin/foodcritic . --exclude spec
-  # - /opt/chefdk/embedded/bin/rspec spec
+  - /opt/chefdk/embedded/bin/rspec spec
   #cj
   # - KITCHEN_LOCAL_YAML=.kitchen.yml /opt/chefdk/embedded/bin/kitchen verify
   #cjOld
@@ -64,4 +64,4 @@ script:
   #jenkins docker
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify smoke-war-stable-ubuntu-docker
   #jenkins vagrant
-  - /opt/chefdk/embedded/bin/kitchen verify 
+  # - /opt/chefdk/embedded/bin/kitchen verify
