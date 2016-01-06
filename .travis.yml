@@ -36,8 +36,8 @@ before_script:
 
 script:
   # - cd c/cj
-  # - cd c/cjOld
-  - cd c/jenkins
+  - cd c/cjOld
+  # - cd c/jenkins
   - ls
   - pwd
 
