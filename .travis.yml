@@ -65,7 +65,10 @@ script:
   #jenkins docker; workin on travis
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify smoke-war-stable-ubuntu-docker
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify smoke-war-stable-ubuntu-docker
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
+
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+  #TODO wait here
+  # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 
   #jenkins vagrant
   # - /opt/chefdk/embedded/bin/kitchen verify
