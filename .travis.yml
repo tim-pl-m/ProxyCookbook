@@ -68,7 +68,7 @@ script:
 
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
   #TODO wait here
-  - ./waitScript.sh
+  - bash ./waitScript.sh
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 
   #jenkins vagrant
