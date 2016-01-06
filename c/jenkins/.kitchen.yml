@@ -58,13 +58,13 @@ suites:
       jenkins:
         master:
           install_method: package
-  - name: smoke_war_stable
-    run_list: jenkins_smoke::default
-    attributes:
-      jenkins:
-        master:
-          install_method: war
-          source: http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war
+  # - name: smoke_war_stable
+  #   run_list: jenkins_smoke::default
+  #   attributes:
+  #     jenkins:
+  #       master:
+  #         install_method: war
+  #         source: http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war
   # - name: master_basic
   #   run_list:
   #     - recipe[ciexjenkins::master]
