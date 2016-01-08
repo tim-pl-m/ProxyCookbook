@@ -11,7 +11,8 @@ node['ciexjenkins']['plugins'].each do |plugin, params|
   jenkins_plugin plugin do
     version params['version']
     source params['source'] if params.key?('source')
-    notifies :restart, 'service[jenkins]'
+    #TODO needed?
+    # notifies :restart, 'service[jenkins]'
   end
 end
 
