@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package 'docker-selinux'
+#TODO act for centos
+# package 'docker-selinux'
+package 'docker'
 
 docker_service 'default' do
   version node['ciexdocker']['version']
