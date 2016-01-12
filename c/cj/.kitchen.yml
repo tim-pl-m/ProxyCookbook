@@ -6,8 +6,8 @@ driver:
 
 provisioner:
   name: chef_zero
-  # encrypted_data_bag_secret_key_path: "enc_data_bag_secret"
-  # data_bags_path: "data_bags"
+  encrypted_data_bag_secret_key_path: "enc_data_bag_secret"
+  data_bags_path: "data_bags"
 
 platforms:
   - name: centos-7.0
@@ -28,22 +28,22 @@ platforms:
   #       - ["private_network", {ip: "122.168.33.9"}]
 
 suites:
-  - name: master_basic
-    run_list:
-      - recipe[ciexjenkins::master]
-    attributes: {
-      "ciexjenkins": {
-        "install_plugins": false,
-        "ad": {
-          "enabled": false,
-          # "enabled": true,
-          "domain": "projekte.local",
-          "server": "projekte-dc1.projekte.local",
-          "site": "dc=projekte,dc=local",
-          "bindName": "cn=ciex-user01,ou=CI-Extern,dc=projekte,dc=local"
-        }
-      }
-    }
+  # - name: master_basic
+  #   run_list:
+  #     - recipe[ciexjenkins::master]
+  #   attributes: {
+  #     "ciexjenkins": {
+  #       "install_plugins": false,
+  #       "ad": {
+  #         "enabled": false,
+  #         # "enabled": true,
+  #         "domain": "projekte.local",
+  #         "server": "projekte-dc1.projekte.local",
+  #         "site": "dc=projekte,dc=local",
+  #         "bindName": "cn=ciex-user01,ou=CI-Extern,dc=projekte,dc=local"
+  #       }
+  #     }
+  #   }
   - name: plugins
     run_list:
       - recipe[ciexjenkins::master]
