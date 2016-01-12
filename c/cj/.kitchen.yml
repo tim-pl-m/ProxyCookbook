@@ -1,6 +1,6 @@
 ---
 driver:
-  name: docker
+  name: vagrant
   vagrantfiles:
     - workaround_kitchen_vagrant_bug_181.rb
 
@@ -49,6 +49,6 @@ suites:
       - recipe[ciexjenkins::master]
     attributes: {
       "ciexjenkins": {
-        "install_plugins": false
+        "install_plugins": true
       }
     }
