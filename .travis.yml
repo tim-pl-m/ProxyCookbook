@@ -35,7 +35,9 @@ before_script:
   - /opt/chefdk/embedded/bin/chef gem install kitchen-docker
 
 script:
-  - cd c/cj
+
+  - cd c/cd
+  # - cd c/cj
   # - cd c/cjOld
   # - cd c/jenkins
   - ls
@@ -77,3 +79,5 @@ script:
 
   #jenkins vagrant
   # - /opt/chefdk/embedded/bin/kitchen verify
+
+  #maximum travis-runtime:
