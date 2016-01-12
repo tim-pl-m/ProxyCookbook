@@ -36,8 +36,9 @@ before_script:
 
 script:
 
-  - cd c/cd
-  # - cd c/cj
+  #TODO fix docker-slave container
+  # - cd c/cd
+  - cd c/cj
   # - cd c/cjOld
   # - cd c/jenkins
   - ls
