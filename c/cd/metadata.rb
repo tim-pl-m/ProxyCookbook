@@ -9,5 +9,6 @@ version '0.1.1'
 
 recipe 'ciexdocker::install', 'installs/configures docker'
 
+# depends 'docker', '~> 2.0'
 depends 'docker', '=1.0.29'
 depends 'firewall', '= 2.0.3'
