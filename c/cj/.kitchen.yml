@@ -1,8 +1,9 @@
 ---
 driver:
   name: vagrant
-  vagrantfiles:
-    - workaround_kitchen_vagrant_bug_181.rb
+  #TODO see cd
+  # vagrantfiles:
+  #   - workaround_kitchen_vagrant_bug_181.rb
 
 provisioner:
   name: chef_zero
