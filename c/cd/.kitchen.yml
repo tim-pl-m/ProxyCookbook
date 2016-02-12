@@ -8,25 +8,26 @@ driver:
 
 provisioner:
   name: chef_zero
-  encrypted_data_bag_secret_key_path: "test/fixtures/enc_data_bag_secret"
-  data_bags_path: "test/fixtures/data_bags"
+  # encrypted_data_bag_secret_key_path: "test/fixtures/enc_data_bag_secret"
+  # data_bags_path: "test/fixtures/data_bags"
 
 platforms:
   - name: centos-7.0
-    driver:
-      network:
-        - ["forwarded_port", {guest: 4243, host: 8084}]
-        - ["private_network", {ip: "122.168.33.7"}]
+    # driver:
+    #   network:
+    #     - ["forwarded_port", {guest: 4243, host: 8084}]
+    #     - ["private_network", {ip: "122.168.33.7"}]
 
 suites:
   - name: install
     run_list:
+      # - recipe[yum]
       - recipe[ciexdocker::install]
-    attributes: {
-      "firewall": {
-        "allow_ssh": true
-      },
-      "ciexdocker": {
-        "allowed_api_client_ip": "10.1.102.121/16"
-      }
-    }
+    # attributes: {
+    #   "firewall": {
+    #     "allow_ssh": true
+    #   },
+    #   "ciexdocker": {
+    #     "allowed_api_client_ip": "10.1.102.121/16"
+    #   }
+    # }
