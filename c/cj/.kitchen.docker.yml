@@ -1,6 +1,9 @@
 driver:
   name: docker
+  # image: centos:latest
   image: phusion/baseimage:latest
+  # ubuntu 14.04 LTS
+  # https://github.com/phusion/baseimage-docker
   provision_command:
     # Enable SSHD
     - rm -f /etc/service/sshd/down
