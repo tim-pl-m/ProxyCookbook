@@ -49,7 +49,6 @@ suites:
       - recipe[ciexjenkins::master]
     attributes: {
       "ciexjenkins": {
-        "install_plugins": true
+        "install_plugins": false
       }
     }
-    
