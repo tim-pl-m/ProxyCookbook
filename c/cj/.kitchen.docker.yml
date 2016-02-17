@@ -1,7 +1,7 @@
 driver:
   name: docker
   # image: milcom/centos7-systemd
-  # image: centos:7.0
+  # image: centos:7.1.1503
   image: centos:7.0.1406
   # image: phusion/baseimage:latest
   # ubuntu 14.04 LTS
@@ -23,7 +23,7 @@ driver:
   forward:
     - 8080:8080
   # run_command: /sbin/my_init
-  privileged: true
+  # privileged: true
 
 platforms:
   - name: centos-docker
