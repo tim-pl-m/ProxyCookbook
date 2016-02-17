@@ -76,7 +76,7 @@ script:
   # - bash ./waitScript.sh
   #TODO quickfix: wait 1 min
   - sleep 1m
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
+  # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 
   #jenkins vagrant
   # - /opt/chefdk/embedded/bin/kitchen verify
