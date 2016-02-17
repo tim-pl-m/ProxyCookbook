@@ -23,7 +23,7 @@ driver:
   forward:
     - 8080:8080
   # run_command: /sbin/my_init
-  # privileged: true
+  privileged: true
 
 platforms:
   - name: centos-docker
