@@ -1,27 +1,29 @@
 ---
 driver:
-  # name: vagrant
+  name: vagrant
   # vagrantfiles:
   #   - workaround_kitchen_vagrant_bug_181.rb
-  name: docker
+  # name: docker
   # binary: docker.io
-  socket: tcp://192.168.99.100:2376
+  # socket: tcp://192.168.99.100:2376
   # image: centos:7.0.1406
 
-# provisioner:
-#   name: chef_zero
-#   encrypted_data_bag_secret_key_path: "enc_data_bag_secret"
-#   data_bags_path: "data_bags"
+provisioner:
+  name: chef_zero
+  encrypted_data_bag_secret_key_path: "enc_data_bag_secret"
+  data_bags_path: "data_bags"
 
 platforms:
 - name: centos
-  driver_config:
-    image: centos
+  driver:
+    # image: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.0_chef-provisionerless.box
+    # image: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.2_chef-provisionerless.box
     platform: rhel
 
 # platforms:
 #   - name: centos-7.0
 #     driver:
+#       #  image: centos:7.0.1406
 #        network:
 #           # auto_correct to allow to test both recipes in parallel
 #           - ["forwarded_port", {guest: 8080, host: 8080, auto_correct: true}]
