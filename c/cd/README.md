@@ -1,11 +1,15 @@
 # ciexjenkinsdokcer cookbook
 
+wip:
+-firewall and jenkins-slave-config-deactivated
+-converges with vagrant on linux
+
 This cookbook is a wrapper for the docker cookbook from official supermarket.
 It installs/configures docker and its daemon and builds a docker image for jenkins slaves by default.
 
 ## Dependencies
 
- - cookbook `docker: This is the 
+ - cookbook `docker: This is the
 
 ## Supported Platforms
 
