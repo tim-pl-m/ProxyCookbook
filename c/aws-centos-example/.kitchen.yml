@@ -11,6 +11,7 @@ driver:
   # iam_profile_name: tim_wieschalla@adesso
   # associate_public_ip: true
   # interface: dns
+  # image_id: ami-08222e15
 
 transport:
   ssh_key: ~/.ssh/devenv-key.pem
@@ -19,6 +20,7 @@ transport:
  # username: ec2-user
  #default?
  # username: ubuntu
+  # username: centos
 
 #  driver:
 #   name: ec2
@@ -44,8 +46,12 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-14.04
-  # - name: centos-7
+  # - name: ubuntu-14.04
+  - name: centos-7
+    # driver:
+    #   image_id: ami-08222e15
+    # transport:
+    #   username: centos
 
 suites:
   - name: default
