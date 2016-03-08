@@ -7,8 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-#TODO centos
-package 'docker-selinux'
+#TODO for centos
+# package 'docker-selinux'
 
 # docker_installation 'default' do
 #   repo 'test'
