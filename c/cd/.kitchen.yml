@@ -1,10 +1,19 @@
 ---
-driver:
-  name: vagrant
+# driver:
+#   name: vagrant
   #TODO check if needed anymore
   #throws error on linux converge
   # vagrantfiles:
   #   - workaround_kitchen_vagrant_bug_181.rb
+
+driver:
+  name: ec2
+  aws_ssh_key_id: devenv-key
+  security_group_ids: ["sg-835a61ea"]
+  region: eu-central-1
+
+transport:
+  ssh_key: ~/.ssh/devenv-key.pem
 
 provisioner:
   name: chef_zero
