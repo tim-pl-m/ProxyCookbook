@@ -22,8 +22,8 @@
 #   action [:start]
 # end
 
-#TODO ubuntu?
-# package 'docker'
+#TODO ubuntu
+package 'docker'
 
 docker_service 'default' do
   version node['ciexdocker']['version']
@@ -32,7 +32,8 @@ docker_service 'default' do
     'unix:///var/run/docker.sock'
   ]
   tls false
-  provider Chef::Provider::DockerService::Systemd
+  #TODO for centos
+  # provider Chef::Provider::DockerService::Systemd
   action [:create, :start]
 end
 #
