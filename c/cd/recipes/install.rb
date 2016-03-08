@@ -22,7 +22,7 @@
 #   action [:start]
 # end
 
-#TODO ubuntu?
+#TODO ubuntu
 package 'docker'
 
 docker_service 'default' do
@@ -32,6 +32,7 @@ docker_service 'default' do
     'unix:///var/run/docker.sock'
   ]
   tls false
+  #TODO for centos
   # provider Chef::Provider::DockerService::Systemd
   action [:create, :start]
 end
