@@ -5,13 +5,19 @@ driver:
   # aws_ssh_key_id: Tim
   security_group_ids: ["sg-835a61ea"]
   # instance_type: m3.medium
+  #default
+  # instance_type: t2.micro
   region: eu-central-1
   # iam_profile_name: tim_wieschalla@adesso
+  # associate_public_ip: true
+  # interface: dns
 
 transport:
  ssh_key: ~/Dropbox/AdessoDropB/zertifikate/aws/devenv-key.pem
  # ssh_key: ~/.ssh/Tim
- username: ec2-user
+ # username: ec2-user
+ #default?
+ # username: ubuntu
 
 #  driver:
 #   name: ec2
