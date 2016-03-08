@@ -2,7 +2,6 @@
 driver:
   name: vagrant
   #TODO check if needed anymore
-  #throws error on linux converge
   vagrantfiles:
     - workaround_kitchen_vagrant_bug_181.rb
 
