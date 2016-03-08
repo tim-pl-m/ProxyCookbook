@@ -13,7 +13,8 @@ driver:
   # interface: dns
 
 transport:
- ssh_key: ~/Dropbox/AdessoDropB/zertifikate/aws/devenv-key.pem
+  ssh_key: ~/.ssh/devenv-key.pem
+ # ssh_key: ~/Dropbox/AdessoDropB/zertifikate/aws/devenv-key.pem
  # ssh_key: ~/.ssh/Tim
  # username: ec2-user
  #default?
