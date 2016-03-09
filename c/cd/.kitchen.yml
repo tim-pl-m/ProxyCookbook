@@ -1,10 +1,4 @@
 ---
-# driver:
-#   name: vagrant
-  #TODO check if needed anymore
-  # vagrantfiles:
-  #   - workaround_kitchen_vagrant_bug_181.rb
-
 driver:
   name: ec2
   aws_ssh_key_id: devenv-key
