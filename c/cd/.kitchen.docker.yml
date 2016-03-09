@@ -21,10 +21,10 @@ driver:
 #   run_command: /sbin/my_init
 #
 platforms:
-  # - name: ubuntu-docker
-  - name: centos
-    driver_config:
-      image: centos
-      platform: rhel
+  - name: ubuntu-docker
+  # - name: centos
+  #   driver_config:
+  #     image: centos
+  #     platform: rhel
     # run_list:
     # - recipe[yum]
