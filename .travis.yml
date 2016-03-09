@@ -68,15 +68,16 @@ script:
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify smoke-war-stable-ubuntu-docker
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify smoke-war-stable-ubuntu-docker
   # - curl
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+  #cd
   # - curl --silent --show-error --connect-timeout 1 -I http://localhost:8080
   # - curl --silent --show-error --connect-timeout 1 -I http://localhost:8080 | grep '302 Found'
-  #TODO wait here
+  #
   # - bash ./waitScript.sh
   #TODO quickfix: wait 1 min
-  - sleep 1m
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
-
+  # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+  # - sleep 1m
+  # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen test
   #jenkins vagrant
   # - /opt/chefdk/embedded/bin/kitchen verify
 
