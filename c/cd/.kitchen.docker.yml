@@ -18,7 +18,7 @@ driver:
   forward:
     - 4243:8084
     # {guest: 4243, host: 8084}
-  run_command: /sbin/my_init
+  # run_command: /sbin/my_init
 
 platforms:
   - name: ubuntu-docker
