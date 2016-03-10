@@ -32,8 +32,8 @@ platforms:
 
 suites:
   - name: plugins
-    # run_list:
-    #   - recipe[ciexjenkins::master]
+    run_list:
+      - recipe[ciexjenkins::master]
     # attributes: {
     #   "ciexjenkins": {
     #     "install_plugins": true
