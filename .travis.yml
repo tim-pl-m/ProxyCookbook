@@ -81,7 +81,7 @@ script:
 
   # - kitchen converge
   # - sleep 1m
-  # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
+  # - kitchen verify
 
   #jenkins vagrant
   # - /opt/chefdk/embedded/bin/kitchen verify
