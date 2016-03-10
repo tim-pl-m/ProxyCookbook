@@ -1,4 +1,9 @@
 
+# blacklist
+branches:
+  except:
+    - d_aws
+    - aws_centos
 rvm:
   # - 1.9.3
   - 2.1
