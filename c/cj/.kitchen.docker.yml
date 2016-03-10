@@ -4,14 +4,14 @@ driver:
   # image: centos:7
 
   #TODO: source/exact version? default config?
-    image: ubuntu:14.04
-  # image: phusion/baseimage:latest
+    # image: ubuntu:14.04
+  image: phusion/baseimage:latest
   # ubuntu 14.04 LTS
   # https://github.com/phusion/baseimage-docker
   provision_command:
     # Enable SSHD
-    - rm -f /etc/service/sshd/down
-    - /etc/my_init.d/00_regen_ssh_host_keys.sh
+    # - rm -f /etc/service/sshd/down
+    # - /etc/my_init.d/00_regen_ssh_host_keys.sh
     # Install Java
     # - apt-get install -y --no-install-recommends openjdk-7-jre
     # Install Jenkins
@@ -24,7 +24,7 @@ driver:
 
   forward:
     - 8080:8080
-  run_command: /sbin/my_init
+  # run_command: /sbin/my_init
 
 platforms:
   # - name: centos-docker
