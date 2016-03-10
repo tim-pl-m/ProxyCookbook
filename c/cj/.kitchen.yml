@@ -1,49 +1,36 @@
----
 driver:
-  name: vagrant
-  vagrantfiles:
-    - workaround_kitchen_vagrant_bug_181.rb
+  name: docker
+  # image: milcom/centos7-systemd
+  # image: centos:7
 
-provisioner:
-  name: chef_zero
-  encrypted_data_bag_secret_key_path: "enc_data_bag_secret"
-  data_bags_path: "data_bags"
+  #TODO: source/exact version? default config?
+  image: ubuntu:14.04
+  # image: phusion/baseimage:latest
+  # ubuntu 14.04 LTS
+  # https://github.com/phusion/baseimage-docker
+  provision_command:
+    # Enable SSHD
+    # - rm -f /etc/service/sshd/down
+    # - /etc/my_init.d/00_regen_ssh_host_keys.sh
+    # Install Java
+    # - apt-get install -y --no-install-recommends openjdk-7-jre
+    # Install Jenkins
+    # - mkdir -p /usr/share/jenkins/
+    # - useradd -d /var/lib/jenkins -m -s /bin/bash jenkins
+    # - curl -fL http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war -o /usr/share/jenkins/jenkins.war
+    # - mkdir -p /etc/service/jenkins
+    # - echo "#!/bin/sh \n exec /sbin/setuser jenkins env HOME=/var/lib/jenkins JENKINS_HOME=/var/lib/jenkins java -jar /usr/share/jenkins/jenkins.war --httpPort=8080 --httpListenAddress=0.0.0.0" > /etc/service/jenkins/run
+    # - chmod +x /etc/service/jenkins/run
+
+  forward:
+    - 8080:8080
+  # run_command: /sbin/my_init
 
 platforms:
-  - name: centos-7.0
-    driver:
-       network:
-          # auto_correct to allow to test both recipes in parallel
-          - ["forwarded_port", {guest: 8080, host: 8080, auto_correct: true}]
-          - ["private_network", {ip: "122.168.33.9"}]
-  # - name: centos7
-  #   driver:
-  #     box: centos/7
-  #     box_check_update: false
-  #     ssh:
-  #       insert_key: false
-  #     network:
-  #       # auto_correct to allow to test both recipes in parallel
-  #       - ["forwarded_port", {guest: 8080, host: 8080, auto_correct: true}]
-  #       - ["private_network", {ip: "122.168.33.9"}]
+  # - name: centos-docker
+  - name: ubuntu-docker
 
 suites:
-  # - name: master_basic
-  #   run_list:
-  #     - recipe[ciexjenkins::master]
-  #   attributes: {
-  #     "ciexjenkins": {
-  #       "install_plugins": false,
-  #       "ad": {
-  #         "enabled": false,
-  #         # "enabled": true,
-  #         "domain": "projekte.local",
-  #         "server": "projekte-dc1.projekte.local",
-  #         "site": "dc=projekte,dc=local",
-  #         "bindName": "cn=ciex-user01,ou=CI-Extern,dc=projekte,dc=local"
-  #       }
-  #     }
-  #   }
   - name: plugins
     run_list:
       - recipe[ciexjenkins::master]
