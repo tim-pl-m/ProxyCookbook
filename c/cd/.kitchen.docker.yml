@@ -1,5 +1,8 @@
+---
+# KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen test
 driver:
   name: docker
+<<<<<<< HEAD
   image: phusion/baseimage:latest
   provision_command:
     # Enable SSHD
@@ -19,6 +22,16 @@ driver:
     - 4243:8084
     # {guest: 4243, host: 8084}
   run_command: /sbin/my_init
+=======
+>>>>>>> d_aws
 
 platforms:
   - name: ubuntu-docker
+    run_list:
+      - recipe[ciexdocker::install]
+  # - name: centos
+  #   driver_config:
+  #     image: centos
+  #     platform: rhel
+    # run_list:
+    # - recipe[yum]

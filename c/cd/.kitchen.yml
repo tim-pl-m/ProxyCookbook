@@ -1,30 +1,36 @@
 ---
 driver:
-  name: vagrant
-  vagrantfiles:
-    - workaround_kitchen_vagrant_bug_181.rb
+  name: ec2
+  aws_ssh_key_id: devenv-key
+  security_group_ids: ["sg-835a61ea"]
+  region: eu-central-1
+
+transport:
+  ssh_key: ~/.ssh/devenv-key.pem
 
 provisioner:
   name: chef_zero
-  encrypted_data_bag_secret_key_path: "test/fixtures/enc_data_bag_secret"
-  data_bags_path: "test/fixtures/data_bags"
+  # encrypted_data_bag_secret_key_path: "test/fixtures/enc_data_bag_secret"
+  # data_bags_path: "test/fixtures/data_bags"
 
 platforms:
-  - name: centos-7.0
-    driver:
-      network:
-        - ["forwarded_port", {guest: 4243, host: 8084}]
-        - ["private_network", {ip: "122.168.33.7"}]
+  # - name: centos-7.0
+  - name: ubuntu-14.04
+    # driver:
+    #   network:
+    #     - ["forwarded_port", {guest: 4243, host: 8084}]
+    #     - ["private_network", {ip: "122.168.33.7"}]
 
 suites:
   - name: install
     run_list:
+      # - recipe[yum]
       - recipe[ciexdocker::install]
-    attributes: {
-      "firewall": {
-        "allow_ssh": true
-      },
-      "ciexdocker": {
-        "allowed_api_client_ip": "10.1.102.121/16"
-      }
-    }
+    # attributes: {
+    #   "firewall": {
+    #     "allow_ssh": true
+    #   },
+    #   "ciexdocker": {
+    #     "allowed_api_client_ip": "10.1.102.121/16"
+    #   }
+    # }
