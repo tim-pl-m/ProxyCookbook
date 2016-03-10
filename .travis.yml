@@ -79,7 +79,7 @@ script:
   # - sleep 1m
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 
-- KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen test
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen test
 
   # - kitchen converge
   # - sleep 1m
