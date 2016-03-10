@@ -35,24 +35,24 @@ docker_service 'default' do
   provider Chef::Provider::DockerService::Systemd
   action [:create, :start]
 end
-#
-# credentials = Chef::EncryptedDataBagItem.load("dev", "credentials")
-#
-# template '/tmp/adesso_centos_slave' do
-#   source 'adesso_centos_slave.erb'
-#   variables(:ssh_user => credentials["slave_container"]["ssh"]["username"],
-#   :ssh_pw => credentials["slave_container"]["ssh"]["password"])
-#   notifies :build, 'docker_image[adesso-centos-slave]', :immediately
-# end
-#
-# docker_image 'adesso-centos-slave' do
-#   source '/tmp/adesso_centos_slave'
-#   force true
-#   read_timeout 120
-#   write_timeout 120
-#   action :build_if_missing
-# end
-#
+
+credentials = Chef::EncryptedDataBagItem.load("dev", "credentials")
+
+template '/tmp/adesso_centos_slave' do
+  source 'adesso_centos_slave.erb'
+  variables(:ssh_user => credentials["slave_container"]["ssh"]["username"],
+  :ssh_pw => credentials["slave_container"]["ssh"]["password"])
+  notifies :build, 'docker_image[adesso-centos-slave]', :immediately
+end
+
+docker_image 'adesso-centos-slave' do
+  source '/tmp/adesso_centos_slave'
+  force true
+  read_timeout 120
+  write_timeout 120
+  action :build_if_missing
+end
+
 # include_recipe 'firewall::default'
 #
 # firewall_rule 'docker' do
