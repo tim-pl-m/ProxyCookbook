@@ -2,7 +2,8 @@ driver:
   name: docker
   # image: milcom/centos7-systemd
   # image: centos:7
-  image: phusion/baseimage:latest
+  # image: phusion/baseimage:latest
+    image: ubuntu:14.04
   # ubuntu 14.04 LTS
   # https://github.com/phusion/baseimage-docker
   provision_command:
