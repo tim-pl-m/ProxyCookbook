@@ -75,7 +75,7 @@ script:
   # - bash ./waitScript.sh
   #TODO quickfix: wait 1 min
 
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+  # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
   # - sleep 1m
   # - KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 
