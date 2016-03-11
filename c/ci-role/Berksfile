@@ -1,8 +1,9 @@
 source 'https://supermarket.chef.io'
 
+#TODO: fix
 #for special path
-cookbook 'ciexjenkins', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/ci-role', rel: 'c/cj'
-cookbook 'ciexdocker', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/ci-role', rel: 'c/cd'
+# cookbook 'ciexjenkins', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/ci-role', rel: 'c/cj'
+# cookbook 'ciexdocker', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/ci-role', rel: 'c/cd'
 
 
 # cookbook 'ciexjenkins', git: 'https://ci-cookbooks:'\
