@@ -1,0 +1,41 @@
+driver:
+  name: docker
+  # image: milcom/centos7-systemd
+  # image: centos:7
+
+  #TODO: source/exact version? default config?
+  image: ubuntu:14.04
+  # image: phusion/baseimage:latest
+  # ubuntu 14.04 LTS
+  # https://github.com/phusion/baseimage-docker
+  provision_command:
+    # Enable SSHD
+    # - rm -f /etc/service/sshd/down
+    # - /etc/my_init.d/00_regen_ssh_host_keys.sh
+    # Install Java
+    # - apt-get install -y --no-install-recommends openjdk-7-jre
+    # Install Jenkins
+    # - mkdir -p /usr/share/jenkins/
+    # - useradd -d /var/lib/jenkins -m -s /bin/bash jenkins
+    # - curl -fL http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war -o /usr/share/jenkins/jenkins.war
+    # - mkdir -p /etc/service/jenkins
+    # - echo "#!/bin/sh \n exec /sbin/setuser jenkins env HOME=/var/lib/jenkins JENKINS_HOME=/var/lib/jenkins java -jar /usr/share/jenkins/jenkins.war --httpPort=8080 --httpListenAddress=0.0.0.0" > /etc/service/jenkins/run
+    # - chmod +x /etc/service/jenkins/run
+
+  forward:
+    - 8080:8080
+  # run_command: /sbin/my_init
+
+platforms:
+  # - name: centos-docker
+  - name: ubuntu-docker
+
+# suites:
+#   - name: plugins
+#     run_list:
+#       - recipe[ciexjenkins::master]
+#     attributes: {
+#       "ciexjenkins": {
+#         "install_plugins": true
+#       }
+#     }

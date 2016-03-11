@@ -1,0 +1,12 @@
+source 'https://supermarket.chef.io'
+
+#for special path
+cookbook 'ciexjenkins', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/j_ubuntu/c', rel: 'cj'
+
+# cookbook 'ciexjenkins', git: 'https://ci-cookbooks:'\
+# 'qwGTPwE2@scm.adesso.local/scm/git/adesso/CI-Cookbooks', rel: 'ciexjenkins'
+# cookbook 'ciexbase', git: 'https://ci-cookbooks:'\
+# 'qwGTPwE2@scm.adesso.local/scm/git/adesso/CI-Cookbooks', rel: 'ciexbase'
+# cookbook 'git', '= 4.2.2'
+# cookbook 'ciexproxy', git: 'https://ci-cookbooks:'\
+# 'qwGTPwE2@scm.adesso.local/scm/git/adesso/CI-Cookbooks', rel: 'ciexproxy'

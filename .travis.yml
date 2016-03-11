@@ -38,7 +38,7 @@ script:
 
   #TODO fix docker-slave container
   # - cd c/cd
-  - cd c/cj
+  - cd c/ci-role
   # - cd c/cjOld
   # - cd c/jenkins
   - ls
