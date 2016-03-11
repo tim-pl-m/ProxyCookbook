@@ -1,4 +1,4 @@
 source 'https://supermarket.chef.io'
 
 cookbook "ciexjenkins", github: "tim-pl-m/ProxyCookbook", branch: "ci-role", rel: 'c/cj'
-cookbook "ciexjenkins", github: "tim-pl-m/ProxyCookbook", branch: "ci-role", rel: 'c/cd'
+cookbook "ciexdocker", github: "tim-pl-m/ProxyCookbook", branch: "ci-role", rel: 'c/cd'
