@@ -22,9 +22,9 @@
 #   - name: ubuntu-14.04
 
 suites:
-  - name: plugins
+  - name: ci-setup
     run_list:
-      - recipe[ciexjenkins::master]
+      - recipe[ciexjenkins::master], recipe[ciexdocker::master]
     attributes: {
       "ciexjenkins": {
         "install_plugins": true
