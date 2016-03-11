@@ -23,7 +23,8 @@
 
 suites:
   - name: ci-setup
-    # run_list:
+    run_list:
+      - recipe[ciexjenkins::master]
     #   - recipe[ciexjenkins::master], recipe[ciexdocker::master]
     # attributes: {
     #   "ciexjenkins": {
