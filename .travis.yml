@@ -1,3 +1,9 @@
+# blacklist
+branches:
+  except:
+    - d_aws
+    - aws_centos
+    - ci-role_aws
 
 rvm:
   # - 1.9.3
