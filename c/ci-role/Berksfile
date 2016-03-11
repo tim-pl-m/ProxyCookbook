@@ -1,22 +1,4 @@
 source 'https://supermarket.chef.io'
 
-#for special path
-# cookbook 'ciexjenkins', git: 'https://github.com/tim-pl-m/ProxyCookbook'
-# cookbook 'ciexjenkins', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/ci-role', rel: 'c/cj'
-# cookbook "artifact", github: "RiotGames/artifact-cookbook"
 cookbook "ciexjenkins", github: "tim-pl-m/ProxyCookbook", branch: "ci-role", rel: 'c/cj'
-
-# cookbook "mysql", git: "https://github.com/opscode-cookbooks/mysql.git", branch: "foodcritic"
-# cookbook "mysql", git: "https://github.com/opscode-cookbooks/mysql.git", tag: "3.0.2"
-# cookbook "artifact", github: "RiotGames/artifact-cookbook", tag: "0.9.8"
-
-# cookbook 'ciexdocker', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/ci-role', rel: 'c/cd'
-
-
-# cookbook 'ciexjenkins', git: 'https://ci-cookbooks:'\
-# 'qwGTPwE2@scm.adesso.local/scm/git/adesso/CI-Cookbooks', rel: 'ciexjenkins'
-# cookbook 'ciexbase', git: 'https://ci-cookbooks:'\
-# 'qwGTPwE2@scm.adesso.local/scm/git/adesso/CI-Cookbooks', rel: 'ciexbase'
-# cookbook 'git', '= 4.2.2'
-# cookbook 'ciexproxy', git: 'https://ci-cookbooks:'\
-# 'qwGTPwE2@scm.adesso.local/scm/git/adesso/CI-Cookbooks', rel: 'ciexproxy'
+cookbook "ciexjenkins", github: "tim-pl-m/ProxyCookbook", branch: "ci-role", rel: 'c/cd'
