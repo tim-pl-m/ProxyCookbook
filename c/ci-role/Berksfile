@@ -3,7 +3,7 @@ source 'https://supermarket.chef.io'
 #for special path
 # cookbook 'ciexjenkins', git: 'https://github.com/tim-pl-m/ProxyCookbook'
 # cookbook 'ciexjenkins', git: 'https://github.com/tim-pl-m/ProxyCookbook/tree/ci-role', rel: 'c/cj'
-cookbook "artifact", github: "RiotGames/artifact-cookbook"
+cookbook "artifact", github: "RiotGames/artifact-cookbook", branch: "ci-role"
 cookbook "root", github: "tim-pl-m/ProxyCookbook"
 
 # cookbook "mysql", git: "https://github.com/opscode-cookbooks/mysql.git", branch: "foodcritic"
