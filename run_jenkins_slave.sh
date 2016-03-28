@@ -28,6 +28,11 @@ docker ps
 #kitchen list
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen destroy
 docker stop $(docker ps -a -q)
+docker images
+# docker rm $(docker ps -a -q)
+#docker rmi $(docker images)
+# docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+
 docker ps
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
 # KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
