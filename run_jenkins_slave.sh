@@ -29,7 +29,6 @@ docker ps
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen destroy
 docker stop $(docker ps -a -q)
 docker ps
-KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
-#noop2
-#KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
+#KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen test
