@@ -1,4 +1,7 @@
 #run_jenkins_slave.sh
+
+docker images
+
 git version
 java -version
 docker version
