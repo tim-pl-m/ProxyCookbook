@@ -7,9 +7,9 @@ ruby -v
 #docker stop $(docker ps -a)
 
 # git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch aws_slave
-cd ProxyCookbook/c/cj
+#cd ProxyCookbook/c/cj
 
-#cd c/cj
+cd c/cj
 #cd c/ci-role
 pwd
 ls
@@ -29,5 +29,6 @@ docker ps
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen destroy
 #docker stop $(docker ps -a -q)
 docker ps
-KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
+KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+#KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen test
