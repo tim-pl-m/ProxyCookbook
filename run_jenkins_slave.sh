@@ -26,8 +26,8 @@ kitchen
 docker ps
 #docker pull timplm/jenkins
 #kitchen list
-#KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen destroy
-docker stop $(docker ps -a -q)
+KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen destroy
+#docker stop $(docker ps -a -q)
 docker ps
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
