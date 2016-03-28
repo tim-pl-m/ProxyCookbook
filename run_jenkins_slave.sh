@@ -30,5 +30,6 @@ docker ps
 docker stop $(docker ps -a -q)
 docker ps
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+#noop1
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify
 #KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen test
