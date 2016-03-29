@@ -2,6 +2,7 @@
 
 docker images
 
+
 git version
 java -version
 docker version
