@@ -1,7 +1,7 @@
 #ruby -v
 #sudo apt-get update
 
-sudo apt-get install build-essential make curl -y
+apt-get install build-essential make curl -y
 curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 \curl -L https://get.rvm.io | bash -s stable
 
