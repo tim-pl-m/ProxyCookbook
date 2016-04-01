@@ -23,16 +23,16 @@ rvm use ruby-2.1.4
 #$HOME/.rvm/rubies export PATH=$PATH:$HOME/.rvm/rubies/ruby-2.1.4/bin
 ruby -v
 
-sudo apt-get install docker.io -y
-sudo docker version
-
-#sudo groupadd docker
-#sudo gpasswd -a ${USER} docker
-
-#sudo usermod -a -G docker ubuntu
-sudo usermod -aG docker ubuntu
-
-sudo newgrp docker
-#relog!
-#docker ps
-docker version
+# sudo apt-get install docker.io -y
+# sudo docker version
+# 
+# #sudo groupadd docker
+# #sudo gpasswd -a ${USER} docker
+# 
+# #sudo usermod -a -G docker ubuntu
+# sudo usermod -aG docker ubuntu
+# 
+# sudo newgrp docker
+# #relog!
+# #docker ps
+# docker version
