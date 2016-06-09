@@ -13,7 +13,7 @@ addons:
       - chef-current-precise
     packages:
       - chefdk
-      
+
 
 install:
   - echo "skip bundle install"
@@ -91,3 +91,4 @@ script:
   # - /opt/chefdk/embedded/bin/kitchen verify
 
   #maximum travis-runtime:
+  
