@@ -50,9 +50,10 @@ sudo apt-get install curl -y
 # rvm install ruby-2.1.6 && use ruby-2.1.6
 # source /usr/local/rvm/scripts/rvm
 
-sudo apt-add-repository ppa:brightbox/ruby-ng
+apt-get install software-properties-common -y
+sudo apt-add-repository ppa:brightbox/ruby-ng -y
 sudo apt-get update
-sudo apt-get install ruby2.1
+sudo apt-get install ruby2.1 -y
 
 rvm
 
