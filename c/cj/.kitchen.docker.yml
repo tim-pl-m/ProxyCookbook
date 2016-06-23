@@ -2,7 +2,6 @@ driver:
   name: docker
   # socket: tcp://docker.example.com:4242
   socket: tcp://10.11.16.151:4243
-  binary: docker.io
   # image: milcom/centos7-systemd
   # image: centos:7
 
