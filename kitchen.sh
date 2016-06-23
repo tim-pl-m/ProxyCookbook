@@ -1,3 +1,19 @@
+
+
+ls
+pwd
+
+git --version
+
+git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch ci-role_fromContainer
+cd ProxyCookbook
+ls
+git status
+
+git log -1 --pretty=%B
+
+
+
 pwd
 # show hidden files
 ls -a
