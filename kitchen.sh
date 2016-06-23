@@ -4,7 +4,7 @@ ls -a
 
 ruby -v
 kitchen version
-bundle install
+# bundle install
 # kitchen list
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen list
 # KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
