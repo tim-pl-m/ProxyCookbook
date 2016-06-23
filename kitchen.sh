@@ -35,7 +35,7 @@ whoami
 sudo gem install berkshelf
 
 #go to jenkins-cookbook
-# cd c/cj
+cd c/cj
 
 # TODO: fix sudo error
 sudo bundle install
