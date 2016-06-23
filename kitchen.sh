@@ -3,5 +3,6 @@ pwd
 ls -a
 
 ruby -v
+kitchen version
 kitchen list
 #kitchen verify
