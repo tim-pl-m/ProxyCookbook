@@ -6,11 +6,12 @@ pwd
 git --version
 
 git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch ci-role_fromContainer
+git log -1 --pretty=%B
 cd ProxyCookbook
 ls
 git status
 
-git log -1 --pretty=%B
+
 
 
 
