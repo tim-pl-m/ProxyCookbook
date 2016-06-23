@@ -4,5 +4,5 @@ ls -a
 
 ruby -v
 kitchen version
-kitchen list
+# kitchen list
 #kitchen verify
