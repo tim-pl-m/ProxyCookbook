@@ -31,8 +31,12 @@ RUN useradd -m -d /home/jenkins -s /bin/sh jenkins &&\
     echo "jenkins:jenkins" | chpasswd
 # TODO: sudo right for user
 # visudo
-# jenkins    ALL=(ALL:ALL) ALL
-# passwd --delete jenkins
+# (jenkins    ALL=(ALL:ALL) ALL)
+# am ende:
+# jenkins ALL=(ALL) NOPASSWD: ALL
+# (passwd --delete jenkins)
+
+
 
 
 # Standard SSH port
@@ -73,6 +77,3 @@ apt-get install make -y
 sudo apt-get install ruby2.1-dev -y
 # ? apt-get install -y ruby-dep-selector
 gem install berkshelf
-
-
-
