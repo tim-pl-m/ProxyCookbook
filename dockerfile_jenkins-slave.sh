@@ -59,5 +59,4 @@ rvm
 
 ruby -v
 
-?
-https://blog.codeship.com/build-minimal-docker-container-ruby-apps/
+gem install test-kitchen

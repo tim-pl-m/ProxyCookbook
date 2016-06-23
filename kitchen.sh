@@ -3,5 +3,5 @@ pwd
 ls -a
 
 ruby -v
-#kitchen list
+kitchen list
 #kitchen verify
