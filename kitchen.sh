@@ -41,7 +41,7 @@ sudo gem install berkshelf
 sudo bundle install
 
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen list
-sudo KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
+KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
 
 #kitchen verify
 
