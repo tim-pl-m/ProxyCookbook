@@ -60,3 +60,4 @@ rvm
 ruby -v
 
 gem install test-kitchen
+gem install bundler
