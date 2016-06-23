@@ -31,14 +31,12 @@ kitchen version
 whoami
 
 # check if berkshelf installed
-# TODO: fix sudo error
-sudo gem install berkshelf
+# sudo gem install berkshelf
 
 #go to jenkins-cookbook
 cd c/cj
 
-# TODO: fix sudo error
-sudo bundle install
+# sudo bundle install
 
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen list
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
