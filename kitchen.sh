@@ -32,7 +32,7 @@ whoami
 
 # check if berkshelf installed
 # TODO: fix sudo error
-# sudo gem install berkshelf
+sudo gem install berkshelf
 
 #go to jenkins-cookbook
 # cd c/cj
