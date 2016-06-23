@@ -1,6 +1,5 @@
- driver:
-  name: docker
-    socket: tcp://10.11.16.151:4243
+driver:
+  socket: tcp://10.11.16.151:4243
 
 # platforms:
 #   - name: centos65
