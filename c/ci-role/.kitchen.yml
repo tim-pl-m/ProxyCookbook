@@ -28,6 +28,6 @@ suites:
     #   - recipe[ciexjenkins::master], recipe[ciexdocker::master]
     attributes: {
       "ciexjenkins": {
-        "install_plugins": true
+        "install_plugins": false
       }
     }
