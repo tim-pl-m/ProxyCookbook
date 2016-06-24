@@ -39,7 +39,12 @@ script:
 
   #TODO fix docker-slave container
   # - cd c/cd
-  - cd c/ci-role
+
+  # TODO: plugins-problem
+  # - cd c/ci-role
+
+  - cd c/cj
+
   # - cd c/cjOld
   # - cd c/jenkins
   - ls
