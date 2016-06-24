@@ -77,3 +77,9 @@ apt-get install make -y
 sudo apt-get install ruby2.1-dev -y
 # ? apt-get install -y ruby-dep-selector
 gem install berkshelf
+
+
+-------
+
+# chefdk:
+sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install chefdk
