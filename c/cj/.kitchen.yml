@@ -27,6 +27,7 @@ suites:
       - recipe[ciexjenkins::master]
     attributes: {
       "ciexjenkins": {
-        "install_plugins": true
+        # TODO activate plugins after succ. converge
+        "install_plugins": false
       }
     }
