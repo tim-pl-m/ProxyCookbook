@@ -53,11 +53,11 @@ CMD ["/usr/sbin/sshd", "-D"]
 
 sudo apt-get install curl -y
 
-# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-# \curl -sSL https://get.rvm.io | bash -s stable --rails
-# source ~/.rvm/scripts/rvm
-# rvm install ruby-2.1.6 && use ruby-2.1.6
-# source /usr/local/rvm/scripts/rvm
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --rails
+source ~/.rvm/scripts/rvm
+rvm install ruby-2.1.6 && use ruby-2.1.6
+source /usr/local/rvm/scripts/rvm
 
 apt-get install software-properties-common -y
 sudo apt-add-repository ppa:brightbox/ruby-ng -y
@@ -82,4 +82,10 @@ gem install berkshelf
 -------
 
 # chefdk:
-sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install chefdk
+wget https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.15.15-1_amd64.deb
+sudo dpkg -i chefdk_0.15.15-1_amd64.deb
+chef verify
+# apt-get install curl -y
+# curl -sSL "https://downloads.chef.io/packages-chef-io-public.key" | sudo -E apt-key add -
+# echo "deb https://packages.chef.io/current-apt precise main" | sudo tee -a /etc/apt/sources.list > /dev/null
+# sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install chefdk
