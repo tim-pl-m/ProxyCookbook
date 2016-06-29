@@ -26,9 +26,9 @@ driver:
     # - chmod +x /etc/service/jenkins/run
 
   forward:
-    # TODO intended error
-    - 8080:8080
-    # - 8096:8083
+    # intended error
+    # - 8080:8080
+    - 8096:8083
   # run_command: /sbin/my_init
 
 platforms:
