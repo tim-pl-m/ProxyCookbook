@@ -1,6 +1,7 @@
 ---
 driver:
   name: vagrant
+  # socket: tcp://192.168.12.34:1234
   vagrantfiles:
     - workaround_kitchen_vagrant_bug_181.rb
 
