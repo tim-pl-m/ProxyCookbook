@@ -6,7 +6,8 @@ provisioner:
   name: puppet_apply
   manifests_path: puppet/environments/manifests
   modules_path: puppet/environments/modules/ibs/manifests
-  hiera_data_path: hieradata
+  # hiera_data_path: hieradata
+
   # manifests_path: /repository/puppet_repo/manifests
   # modules_path: /repository/puppet_repo/modules-mycompany
   # hiera_data_path: /repository/puppet_repo/hieradata
@@ -30,4 +31,10 @@ suites:
     # run_list:
     # attributes:
 
-# noop5
+# TODO add tests:
+# docker -v
+# Docker version 1.7.1, build 786b29d/1.7.1
+# packer -v
+# 0.8.5
+# docker-compose -v
+# docker-compose version: 1.4.0
