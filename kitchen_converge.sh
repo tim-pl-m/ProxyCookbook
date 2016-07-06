@@ -11,6 +11,14 @@
 # bash kitchen_converge.sh
 # ----
 
+# some debug stuff:
+# date +"%T"
+# df /dev/sda6 -H
+# http://www.cyberciti.biz/faq/linux-command-space-left-on-hard-disk-drive/ :)
+# cat /proc/meminfo
+# egrep --color 'Mem|Cache|Swap' /proc/meminfo
+# http://www.cyberciti.biz/faq/linux-check-memory-usage/
+
 # ---
 # ruby:
 # # ubuntu:
@@ -48,6 +56,8 @@
 # ?!
 #
 # ---
+
+
 
 pwd
 # show hidden files
