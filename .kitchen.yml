@@ -38,3 +38,6 @@ suites:
 # 0.8.5
 # docker-compose -v
 # docker-compose version: 1.4.0
+
+# TODO make pipeline idempotent to disk-usage
+# noop1
