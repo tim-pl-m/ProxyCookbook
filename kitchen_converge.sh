@@ -1,5 +1,5 @@
 # ----
-# jenkins commands:
+# jenkins job "kitchen converge docker"
 # ls
 # pwd
 #
@@ -10,15 +10,19 @@
 # cd ProxyCookbook
 # bash kitchen_converge.sh
 # ----
-
-# some debug stuff:
-# date +"%T"
-# df /dev/sda6 -H
-# http://www.cyberciti.biz/faq/linux-command-space-left-on-hard-disk-drive/ :)
-# cat /proc/meminfo
+# # test if docker-server is running:
+# curl http://10.11.16.151:4243
+# # should give "404 page not found"
+# # some server information:
+# date +"Time: %T"
+# # TODO doesnt work as jenkins-user
+# #df /dev/sda6 -H
+# df
+# # http://www.cyberciti.biz/faq/linux-command-space-left-on-hard-disk-drive/ :)
+# # cat /proc/meminfo
 # egrep --color 'Mem|Cache|Swap' /proc/meminfo
-# http://www.cyberciti.biz/faq/linux-check-memory-usage/
-
+# # http://www.cyberciti.biz/faq/linux-check-memory-usage/
+#
 # ---
 # ruby:
 # # ubuntu:
