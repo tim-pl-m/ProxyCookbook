@@ -114,6 +114,6 @@ ls -a
 ruby -v
 kitchen version
 kitchen list
-# kitchen converge
+kitchen converge
 #kitchen verify
 
