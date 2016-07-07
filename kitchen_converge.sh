@@ -1,5 +1,39 @@
+# ---
+# job "kitchen converge jenkins"
+#
+# ls
+# pwd
+#
+# git --version
+#
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch ci-role_fromContainer
+# ls
+# cd ProxyCookbook
+# git log -1 --pretty=%B
+# #gem install berkshelf
+# #bundle install
+# bash kitchen_converge.sh
+# #bash run_jenkins_slave.sh
 # ----
-# jenkins job "kitchen converge docker"
+# # jenkins job "kitchen converge docker centos"
+# ls
+# pwd
+#
+# git --version
+#
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint
+# ls
+# cd ProxyCookbook
+# git log -1 --pretty=%B
+# #gem install berkshelf
+# #bundle install
+# 
+# #bash kitchen_converge.sh
+# kitchen -v
+# ruby -v
+# vagrant -v
+# ---
+# jenkins job "kitchen converge docker ubuntu"
 # ls
 # pwd
 #
@@ -10,6 +44,7 @@
 # cd ProxyCookbook
 # bash kitchen_converge.sh
 # ----
+# # jenkins job "check docker server"
 # # test if docker-server is running:
 # curl http://10.11.16.151:4243
 # # should give "404 page not found"
