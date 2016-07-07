@@ -112,6 +112,9 @@ ls -a
 # bundle install
 
 ruby -v
+
+puppet --version
+
 kitchen version
 kitchen list
 kitchen converge
