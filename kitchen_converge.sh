@@ -6,14 +6,21 @@
 #
 # git --version
 #
-# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch ci-role_fromContainer
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch ci-role_fromContainer --depth 1
 # ls
 # cd ProxyCookbook
 # git log -1 --pretty=%B
 # #gem install berkshelf
 # #bundle install
 # bash kitchen_converge.sh
+# #bash kitchen_verify.sh
 # #bash run_jenkins_slave.sh
+# -
+# pwd
+# ls
+# cd ProxyCookbook
+# git log -1 --pretty=%B
+# bash kitchen_teardown.sh
 # ----
 # # jenkins job "kitchen converge docker centos"
 # ls
@@ -21,13 +28,13 @@
 #
 # git --version
 #
-# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint --depth 1
 # ls
 # cd ProxyCookbook
 # git log -1 --pretty=%B
 # #gem install berkshelf
 # #bundle install
-# 
+#
 # #bash kitchen_converge.sh
 # kitchen -v
 # ruby -v
@@ -39,7 +46,7 @@
 #
 # git --version
 #
-# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint --depth 1
 # git log -1 --pretty=%B
 # cd ProxyCookbook
 # bash kitchen_converge.sh
