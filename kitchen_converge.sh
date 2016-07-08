@@ -103,7 +103,17 @@
 #
 # ---
 
-
+# rvm centos:
+# yum install curl -y
+# command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+# curl -L get.rvm.io | bash -s stable
+# source /etc/profile.d/rvm.sh
+# ? rvm install current && rvm use current
+# rvm install 2.1.6 && rvm use 2.1.6
+#
+# vagrant centos:
+# (wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm)
+# yum install https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm -y
 
 pwd
 # show hidden files
