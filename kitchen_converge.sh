@@ -52,7 +52,7 @@
 # #gem install vagrant
 # vagrant -v
 # echo -e "\033[43m Yellow \033[0m"
-# bundle install
+# bash -e provision.sh
 # echo "finished provisioning"
 # echo "\033[43m Yellow \033[0m"
 #
