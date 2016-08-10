@@ -23,22 +23,42 @@
 # bash kitchen_teardown.sh
 # ----
 # # jenkins job "kitchen converge docker centos"
+# set +x
+#
 # ls
 # pwd
 #
 # git --version
 #
-# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint --depth 1
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint
 # ls
 # cd ProxyCookbook
-# git log -1 --pretty=%B
+# ls
+# git log -1
+# #git log -1 --pretty=%B
 # #gem install berkshelf
-# #bundle install
+#
+#
+# vboxmanage --version
+#
+# #source ~/.bash_profile
+# #source /etc/profile.d/rvm.sh
+#
+# ruby -v
+# #gem install test-kitchen
+# kitchen -v
+# #gem install bundler
+# bundler -v
+# #gem install vagrant
+# vagrant -v
+# echo -e "\033[43m Yellow \033[0m"
+# bundle install
+# echo "finished provisioning"
+# echo "\033[43m Yellow \033[0m"
 #
 # #bash kitchen_converge.sh
-# kitchen -v
-# ruby -v
-# vagrant -v
+# echo "\033[42m Success \033[0m"
+# color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
 # ---
 # jenkins job "kitchen converge docker ubuntu"
 # ls
