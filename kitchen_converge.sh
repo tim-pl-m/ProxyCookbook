@@ -24,6 +24,7 @@
 # ----
 # # jenkins job "kitchen converge docker centos"
 # set +x
+# # to hide "echo"
 #
 # ls
 # pwd
@@ -51,14 +52,13 @@
 # bundler -v
 # #gem install vagrant
 # vagrant -v
-# echo -e "\033[43m Yellow \033[0m"
-# bash -e provision.sh
-# echo "finished provisioning"
-# echo "\033[43m Yellow \033[0m"
+# echo -e "\033[43m start provisioning \033[0m"
+# bash provision.sh
+# echo -e "\033[42m finished provisioning \033[0m"
 #
 # #bash kitchen_converge.sh
-# echo "\033[42m Success \033[0m"
-# color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
+# echo -e "\033[42m Success \033[0m"
+# # color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
 # ---
 # jenkins job "kitchen converge docker ubuntu"
 # ls
