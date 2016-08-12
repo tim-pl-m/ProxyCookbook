@@ -1,3 +1,19 @@
+
+pwd
+# show hidden files
+ls -a
+
+# bundle install
+
+ruby -v
+
+puppet --version
+
+kitchen version
+kitchen list
+kitchen converge
+#kitchen verify
+
 # ---
 # job "kitchen converge jenkins"
 #
@@ -135,18 +151,51 @@
 # (wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm)
 # yum install https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm -y
 
-pwd
-# show hidden files
-ls -a
 
+# ----# jenkins job "kitchen converge docker ubuntu"
+# set +x
+# # to hide "echo"
+#
+# ls
+# pwd
+#
+# git --version
+#
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint
+# ls
+# cd ProxyCookbook
+# ls
+# git log -1
+# #git log -1 --pretty=%B
+# #gem install berkshelf
+#
+#
+# #vboxmanage --version
+#
+# #source ~/.bash_profile
+# #source /etc/profile.d/rvm.sh
+#
+# ruby -v
+# #gem install test-kitchen
+# kitchen -v
+# #gem install bundler
+# bundler -v
+# #gem install vagrant
+# #vagrant -v
+# echo -e "\033[43m start provisioning \033[0m"
+# #bash provision.sh
+#
+# git clone https://github.com/tim-pl-m/bundler
+# cd bundler
+# rake build
+# sudo gem install pkg/bundler-1.13.0.rc.1.gem
+# bundle -v
 # bundle install
+#
+# #bash kitchen_converge.sh
+# echo -e "\033[42m Success \033[0m"
+# # color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
 
-ruby -v
 
-puppet --version
 
-kitchen version
-kitchen list
-kitchen converge
-#kitchen verify
 
