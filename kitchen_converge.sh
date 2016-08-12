@@ -48,7 +48,7 @@ KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
 # ls
 # cd ProxyCookbook
 # ls
-# git log -1
+# git log -1 --color
 # #git log -1 --pretty=%B
 # #gem install berkshelf
 #
@@ -80,5 +80,9 @@ KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge
 # echo -e "\033[42m Success \033[0m"
 # # color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
 #
-#
-#
+#--
+#pwd
+# ls
+# cd ProxyCookbook
+# git log -1 --pretty=%B --color
+# bash kitchen_teardown.sh
