@@ -20,3 +20,4 @@ bin/*
 *.lock
 
 .librarian
+test.txt
