@@ -51,7 +51,7 @@ kitchen converge
 # ls
 # cd ProxyCookbook
 # ls
-# git log -1
+# git log -1 --color
 # #git log -1 --pretty=%B
 # #gem install berkshelf
 #
@@ -76,16 +76,57 @@ kitchen converge
 # echo -e "\033[42m Success \033[0m"
 # # color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
 # ---
-# jenkins job "kitchen converge docker ubuntu"
+# jenkins job "kitchen converge jenkins"
+# set +x
+# # to hide "echo"
+#
 # ls
 # pwd
 #
 # git --version
 #
-# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint --depth 1
-# git log -1 --pretty=%B
+# git clone https://github.com/tim-pl-m/ProxyCookbook.git --branch _blueprint
+# ls
 # cd ProxyCookbook
-# bash kitchen_converge.sh
+# ls
+# git log -1
+# #git log -1 --pretty=%B
+# #gem install berkshelf
+#
+#
+# #vboxmanage --version
+#
+# #source ~/.bash_profile
+# #source /etc/profile.d/rvm.sh
+#
+# ruby -v
+# #gem install test-kitchen
+# kitchen -v
+# #gem install bundler
+# bundler -v
+# #gem install vagrant
+# #vagrant -v
+# echo -e "\033[43m start provisioning \033[0m"
+#
+# git clone https://github.com/tim-pl-m/bundler
+# cd bundler
+# rake build
+# sudo gem install pkg/bundler-1.13.0.rc.1.gem
+# bundle -v
+# bash provision.sh
+#
+# #bash kitchen_converge.sh
+# echo -e "\033[42m Success \033[0m"
+# # color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
+#
+#
+# --
+# pwd
+# ls
+# cd ProxyCookbook
+# git log -1 --pretty=%B
+# bash kitchen_teardown.sh
+
 # ----
 # # jenkins job "check docker server"
 # # test if docker-server is running:
@@ -166,7 +207,7 @@ kitchen converge
 # ls
 # cd ProxyCookbook
 # ls
-# git log -1
+# git log -1 --color
 # #git log -1 --pretty=%B
 # #gem install berkshelf
 #
