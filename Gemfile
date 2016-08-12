@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # gem 'berkshelf'
 
-gem 'test-kitchen'
+gem 'test-kitchen', :git => 'https://github.com/tim-pl-m/test-kitchen.git'
 gem 'kitchen-vagrant'
 # gem 'chef-sugar'
 
