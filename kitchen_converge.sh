@@ -152,7 +152,8 @@ kitchen converge
 # yum install https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm -y
 
 
-# ----# jenkins job "kitchen converge docker ubuntu"
+# ----
+# # jenkins job "kitchen converge docker ubuntu"
 # set +x
 # # to hide "echo"
 #
@@ -183,19 +184,20 @@ kitchen converge
 # #gem install vagrant
 # #vagrant -v
 # echo -e "\033[43m start provisioning \033[0m"
-# #bash provision.sh
 #
 # git clone https://github.com/tim-pl-m/bundler
 # cd bundler
 # rake build
 # sudo gem install pkg/bundler-1.13.0.rc.1.gem
 # bundle -v
-# bundle install
+# bash provision.sh
 #
 # #bash kitchen_converge.sh
 # echo -e "\033[42m Success \033[0m"
 # # color needs: https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin
-
-
-
-
+#
+#
+#
+#
+#
+#
