@@ -1,5 +1,6 @@
-# if [ $color = auto ]; then
-#   if [ -t 1 ]; then color=yes; else color=no; fi
-# fi
-color=yes
+git clone https://github.com/tim-pl-m/bundler
+cd bundler
+rake build
+sudo gem install pkg/bundler-1.13.0.rc.1.gem
+bundle -v
 bundle install

@@ -16,3 +16,5 @@ gem 'kitchen-puppet'
 
 gem 'kitchen-vagrant'
 gem 'puppet'
+#TODO update bundler to coloring in first bundle install?
+#gem 'obundler', :git => 'git://github.com/tim-pl-m/bundler.git'
