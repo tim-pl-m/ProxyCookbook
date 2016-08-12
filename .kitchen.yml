@@ -1,8 +1,6 @@
 ---
 driver:
   name: vagrant
-# driver:
-#   socket: tcp://10.11.16.151:4243
 
 provisioner:
   name: puppet_apply
