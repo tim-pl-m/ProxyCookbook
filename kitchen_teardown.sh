@@ -1,5 +1,5 @@
 cd c/cj
 
 kitchen list
-kitchen destroy
+kitchen destroy --color
 

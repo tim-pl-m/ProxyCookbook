@@ -11,7 +11,7 @@ puppet --version
 
 kitchen version
 kitchen list
-kitchen converge
+kitchen converge --color
 #kitchen verify
 
 # ---

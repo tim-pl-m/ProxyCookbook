@@ -5,3 +5,4 @@
 .kitchen
 chefignore
 .tmp
+test.txt
