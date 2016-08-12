@@ -74,7 +74,18 @@ KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge --color
 # sudo gem install pkg/bundler-1.13.0.rc.1.gem
 # bundle -v
 # cd ..
-# bash provision.sh
+## bash provision.sh
+# kitchen -v
+# kitchen list
+# 
+# git clone https://github.com/tim-pl-m/test-kitchen
+# cd test-kitchen
+# rake build
+# ls
+# sudo gem install pkg/test-kitchen-1.10.2c.gem
+# kitchen -v
+# cd ..
+# kitchen list
 #
 # bash kitchen_converge.sh
 # echo -e "\033[42m Success \033[0m"
