@@ -7,6 +7,7 @@ gem 'test-kitchen'
 # TODO fix Could not load the 'puppet_apply')
 # gem 'kitchen-puppet', ">= 1.42.0"
 gem 'kitchen-puppet'
+gem 'net-ssh', "~>3.2.0"
 # gem 'net-ssh', ">=3.2.0"
 # gem 'net-ssh', "~>2.9.2"
 # examples for versioning:
