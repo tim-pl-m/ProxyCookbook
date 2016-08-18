@@ -13,6 +13,13 @@ puppet --version
 
 kitchen version
 kitchen list
+
+#test if docker available
+docker -v
+
+#test if vbox available
+
+
 kitchen converge --color
 #kitchen verify
 
