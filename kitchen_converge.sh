@@ -208,7 +208,7 @@ kitchen list
 # sudo apt-key add oracle_vbox.asc
 # sudo apt-get install -y virtualbox-5.0.16
 # ?!
----
+# ---
 # centos:
 # yum install wget -y
 # cd /etc/yum.repos.d
