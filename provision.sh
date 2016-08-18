@@ -4,6 +4,7 @@
 # gem install pkg/bundler-1.13.0.rc.1.gem
 # bundle -v
 gem list
-#gem uninstall net-ssh -x -I
+#TODO sudo gem error ;gem not installed for user admin?
+#sudo gem uninstall net-ssh -x -I
 bundle install
 gem list
