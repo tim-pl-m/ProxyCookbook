@@ -4,6 +4,6 @@
 # gem install pkg/bundler-1.13.0.rc.1.gem
 # bundle -v
 gem list
-sudo gem uninstall net-ssh -x -I
+#gem uninstall net-ssh -x -I
 bundle install
 gem list
