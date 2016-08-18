@@ -4,5 +4,6 @@
 # gem install pkg/bundler-1.13.0.rc.1.gem
 # bundle -v
 gem list
+gem uninstall net-ssh-4
 bundle install
 gem list
