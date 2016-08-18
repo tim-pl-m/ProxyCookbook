@@ -24,6 +24,9 @@ kitchen converge --color
 #kitchen verify
 
 # ---
+# cat /etc/issue
+# cat /etc/redhat-release
+# ---
 # job "kitchen converge jenkins"
 #
 # ls
@@ -159,20 +162,46 @@ kitchen converge --color
 # # sudo apt-get install ruby2.1.8 -y
 # # ruby -v
 # centos:
+#without rvm
 # cat /etc/redhat-release
-# (yum install ruby2.1.8)
-# yum install ruby
+# (?yum install ruby2.1.8)
+# ---
+# yum --enablerepo=epel -y install libyaml libyaml-devel readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel libffi-devel
+# mkdir -p rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
+# wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.8.tar.gz -P rpmbuild/SOURCES
+# tar -xvzf ruby-2.1.8.tar.gz
+# ./configure
+# make
+# make install
 #
-# gem install test-kitchen
-# gem install bundler
+# with rvm:
+# su jenkins
+# gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+# curl -sSL https://get.rvm.io | bash -s stable
+# source /etc/profile.d/rvm.sh
+# rvm requirements
+# rvm install ruby-2.1.8 && rvm use ruby-2.1.8
+# ruby -v
+#
+# TODO fix rvm-jenkins problem
+# echo "source $HOME/.rvm/scripts/rvm" >> ~/.bashrc
+# source ~/.bashrc
+# source /home/jenkins/.rvm/scripts/rvm
+# vi ~/.bashrc
+# echo "/usr/local/bin" >> ~/.bashrc
+#
+# ---
 
-# kitchen:
-# ...
+# kitchen+bundler+vagrant:
+# gem install bundler
+# gem install test-kitchen
+# kitchen -v
 # ---
 
 # ---
 #
 # virtualbox:
+# ubuntu:
 # wget http://download.virtualbox.org/virtualbox/5.0.16/virtualbox-5.0_5.0.16-105871~Ubuntu~trusty_amd64.deb
 # sudo dpkg -i virtualbox-5.0_5.0.16-105871~Ubuntu~trusty_amd64.deb
 #
@@ -182,10 +211,39 @@ kitchen converge --color
 # sudo apt-key add oracle_vbox.asc
 # sudo apt-get install -y virtualbox-5.0.16
 # ?!
+---
+# centos:
+# yum install wget -y
+# cd /etc/yum.repos.d
+# wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+# yum update -y
+# rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-7.noarch.rpm
+# yum --enablerepo=epel install dkms -y
+# yum groupinstall "Development Tools" -y
+# yum install kernel-devel -y
+# yum install http://download.virtualbox.org/virtualbox/5.0.16/VirtualBox-5.0-5.0.16_105871_el6-1.x86_64.rpm -y
+#
+# yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-PAE-devel dkms -y
+#
+# sudo /sbin/rcvboxdrv setup
+# vboxmanage --version
+#
+# yum remove VirtualBox*
+# yum install VirtualBox
+#
+# -
+#
+# wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm
+# yum localinstall vagrant_1.8.1_x86_64.rpm
+# ---
+# ubuntu:
 #
 # vagrant:
 # sudo apt-get install vagrant
+# /
+
 # ?!
+# vagrant -v
 #
 # ---
 
