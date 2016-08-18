@@ -14,9 +14,6 @@ puppet --version
 kitchen version
 kitchen list
 
-#check if docker available
-docker -v
-
 echo -e "\033[43m check if vbox available; has to be 5.0.16r105871 \033[0m"
 vboxmanage -v
 
