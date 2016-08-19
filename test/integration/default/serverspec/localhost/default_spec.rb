@@ -17,13 +17,33 @@ require 'spec_helper'
  end
 
  describe 'docker installed' do
-  #  describe command 'sudo service httpd status' do
-  #    its(:stdout) { is_expected.to match(/httpd \(pid\s\s.*is\srunning/) }
-  #    # httpd (pid  3047) is running...
-  #  end
    describe command 'docker -v' do
-    #  its(:stderr) { is_expected.to match(/git version 1\.7\..*/) }
      its(:stdout) { is_expected.to match(/Docker version*/) }
     #  Docker version 1.7.1, build 786b29d/1.7.1
    end
  end
+
+
+ describe 'packer installed' do
+   describe command 'packer -v' do
+     its(:stdout) { is_expected.to match(/0.8.4/) }
+    # 0.8.5
+   end
+ end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
