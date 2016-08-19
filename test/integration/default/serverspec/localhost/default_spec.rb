@@ -31,6 +31,9 @@ require 'spec_helper'
    end
  end
 
+# docker-compose -v
+#  docker-compose version: 1.4.0
+
 
 
 

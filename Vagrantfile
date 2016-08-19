@@ -76,7 +76,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #   puppet.environment = "ibs"
     # end
   end
-#docker-compose error:
+#TODO docker-compose error: (happens when?)
 # ==> ibs: Error: docker-compose up -d returned 1 instead of one of [0]
 # ==> ibs: Error: /Stage[main]/Ibs/Exec[run registry]/returns: change from notrun to 0 failed: docker-compose up -d returned 1 instead of one of [0]
 
