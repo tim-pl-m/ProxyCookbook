@@ -1,44 +1,21 @@
 ---
 driver:
   name: vagrant
+  # vagrantfiles:
+  #   - Vagrantfile.rb
+
 
 provisioner:
   name: puppet_apply
-  manifests_path: puppet/environments/manifests
-  modules_path: puppet/environments/modules/ibs/manifests
-  # require_chef_for_busser: false
-  # hiera_data_path: hieradata
+  # manifests_path: puppet/environments/manifests
+  # modules_path: puppet/environments/modules/ibs/manifests
 
-  # manifests_path: /repository/puppet_repo/manifests
-  # modules_path: /repository/puppet_repo/modules-mycompany
-  # hiera_data_path: /repository/puppet_repo/hieradata
 
 platforms:
   - name: centos-6.7-64-nocm
     driver:
-      box: alltiersolutions/centos-6.7-64-nocm
-      box_url: https://atlas.hashicorp.com/alltiersolutions/boxes/centos-6.7-64-nocm
-  # - name: centos-6.7
-  #   driver:
-  #     box: packer/centos-6.7
-  #     box_url: https://github.com/CommanderK5/packer-centos-template/releases/download/0.6.7/vagrant-centos-6.7.box
+      vagrantfiles:
+        - Vagrantfile.rb
 
 suites:
   - name: default
-    provisioner:
-      # manifest: empty.pp
-      # todo: modules einbinden
-      manifest: ibs.pp
-    # run_list:
-    # attributes:
-
-# TODO add tests:
-# docker -v
-# Docker version 1.7.1, build 786b29d/1.7.1
-# packer -v
-# 0.8.5
-# docker-compose -v
-# docker-compose version: 1.4.0
-
-# TODO make pipeline idempotent to disk-usage
-# noop1
