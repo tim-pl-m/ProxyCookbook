@@ -44,39 +44,39 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # gitlab server
-  config.vm.define :git do |git|
-    git.vm.network "private_network", ip: "10.10.10.12"
-    git.vm.network "forwarded_port", guest: 80, host: 9082
-
-    git.vm.provision "shell" do |shell|
-      shell.inline = modules_install "vshn/gitlab"
-    end
-
-    git.vm.provision "puppet" do |puppet|
-      puppet.environment_path = "../../../puppet/environments"
-      puppet.environment = "git"
-    end
-  end
+  # config.vm.define :git do |git|
+  #   git.vm.network "private_network", ip: "10.10.10.12"
+  #   git.vm.network "forwarded_port", guest: 80, host: 9082
+  #
+  #   git.vm.provision "shell" do |shell|
+  #     shell.inline = modules_install "vshn/gitlab"
+  #   end
+  #
+  #   git.vm.provision "puppet" do |puppet|
+  #     puppet.environment_path = "../../../puppet/environments"
+  #     puppet.environment = "git"
+  #   end
+  # end
 
   # image build server - build the docker images
-  config.vm.define :ibs do |ibs|
-    ibs.vm.network "private_network", ip: "10.10.10.13"
-
-    ibs.vm.provision "shell" do |shell|
-      shell.inline = modules_install [
-        # "garethr/docker"
-        "garethr/docker",
-        # "counsyl/packer"
-        "counsyl/packer",
-        "garystafford/docker_compose"
-      ]
-    end
+  # config.vm.define :ibs do |ibs|
+  #   ibs.vm.network "private_network", ip: "10.10.10.13"
+  #
+  #   ibs.vm.provision "shell" do |shell|
+  #     shell.inline = modules_install [
+  #       # "garethr/docker"
+  #       "garethr/docker",
+  #       # "counsyl/packer"
+  #       "counsyl/packer",
+  #       "garystafford/docker_compose"
+  #     ]
+  #   end
 
     # ibs.vm.provision "puppet" do |puppet|
     #   puppet.environment_path = "puppet/environments"
     #   puppet.environment = "ibs"
     # end
-  end
+  # end
 #docker-compose error:
 # ==> ibs: Error: docker-compose up -d returned 1 instead of one of [0]
 # ==> ibs: Error: /Stage[main]/Ibs/Exec[run registry]/returns: change from notrun to 0 failed: docker-compose up -d returned 1 instead of one of [0]
