@@ -19,7 +19,7 @@ vboxmanage -v
 kitchen list
 vagrant box list
 kitchen converge --color
-#kitchen verify
+kitchen verify --color
 
 # ---
 # cat /etc/issue
