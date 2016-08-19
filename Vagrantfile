@@ -30,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # jenkins ci
   config.vm.define :ci do |ci|
     ci.vm.network "private_network", ip: "10.10.10.11"
-    ci.vm.network "forwarded_port", guest: 8080, host: 8081
+    ci.vm.network "forwarded_port", guest: 8080, host: 9081
 
     ci.vm.provision "shell" do |shell|
       shell.inline = modules_install "rtyler/jenkins"
@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # gitlab server
   config.vm.define :git do |git|
     git.vm.network "private_network", ip: "10.10.10.12"
-    git.vm.network "forwarded_port", guest: 80, host: 8082
+    git.vm.network "forwarded_port", guest: 80, host: 9082
 
     git.vm.provision "shell" do |shell|
       shell.inline = modules_install "vshn/gitlab"
