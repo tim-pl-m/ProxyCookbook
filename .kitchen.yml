@@ -6,8 +6,9 @@ provisioner:
   name: puppet_apply
   manifests_path: puppet/environments/manifests
   modules_path: puppet/environments/modules/ibs/manifests
+  hiera_data_path: puppet/hieradata
   # require_chef_for_busser: false
-  # hiera_data_path: hieradata
+
 
   # manifests_path: /repository/puppet_repo/manifests
   # modules_path: /repository/puppet_repo/modules-mycompany
