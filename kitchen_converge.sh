@@ -18,7 +18,7 @@ vboxmanage -v
 
 kitchen list
 vagrant box list
-#kitchen converge --color
+kitchen converge --color
 #kitchen verify
 
 # ---
