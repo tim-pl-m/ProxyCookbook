@@ -26,7 +26,7 @@ require 'spec_helper'
 
  describe 'packer installed' do
    describe command 'packer -v' do
-     its(:stdout) { is_expected.to match(/0.8.4/) }
+     its(:stdout) { is_expected.to match(/0.8.5/) }
     # 0.8.5
    end
  end
