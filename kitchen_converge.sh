@@ -22,12 +22,12 @@ whoami
 # sudo gem install berkshelf
 
 #go to jenkins-cookbook
-cd c/cj
+cd jenkins
 
 bundle install
 
 KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen list
-KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge --color
+KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify --color
 # KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen destroy
 
 #kitchen verify
@@ -77,7 +77,7 @@ KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen converge --color
 ## bash provision.sh
 # kitchen -v
 # kitchen list
-# 
+#
 # git clone https://github.com/tim-pl-m/test-kitchen
 # cd test-kitchen
 # rake build
