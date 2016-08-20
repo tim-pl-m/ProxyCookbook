@@ -4,6 +4,7 @@ driver:
   # socket: tcp://10.11.16.151:4243
   # binary: docker.io
   use_sudo: false
+  #TODO workaround; https://github.com/test-kitchen/kitchen-docker/issues/207
   # image: milcom/centos7-systemd
   # image: centos:7
 

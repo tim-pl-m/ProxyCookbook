@@ -1,5 +1,6 @@
 driver:
   name: docker
+  use_sudo: false
   # image: milcom/centos7-systemd
   # image: centos:7
 
