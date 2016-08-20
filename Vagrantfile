@@ -71,23 +71,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ]
     end
 
-    # ibs.vm.provision "puppet" do |puppet|
-    #   puppet.environment_path = "puppet/environments"
-    #   puppet.environment = "ibs"
-    # end
+    ibs.vm.provision "puppet" do |puppet|
+      puppet.environment_path = "puppet/environments"
+      puppet.environment = "ibs"
+    end
   end
 #TODO docker-compose error: (happens when?)
 # ==> ibs: Error: docker-compose up -d returned 1 instead of one of [0]
 # ==> ibs: Error: /Stage[main]/Ibs/Exec[run registry]/returns: change from notrun to 0 failed: docker-compose up -d returned 1 instead of one of [0]
 
-  #
-  # # deployment server one
-  # config.vm.define :s1, autostart: false do |s1|
-  #   s1.vm.network "private_network", ip: "10.10.10.14"
-  # end
-  #
-  # # deployment server two
-  # config.vm.define :s2, autostart: false do |s2|
-  #   s2.vm.network "private_network", ip: "10.10.10.15"
-  # end
+  # deployment server one
+  config.vm.define :s1, autostart: false do |s1|
+    s1.vm.network "private_network", ip: "10.10.10.14"
+  end
+
+  # deployment server two
+  config.vm.define :s2, autostart: false do |s2|
+    s2.vm.network "private_network", ip: "10.10.10.15"
+  end
 end
