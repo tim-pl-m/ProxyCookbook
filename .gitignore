@@ -1,4 +1,8 @@
+*.lock
+*.log
+.librarian
 .vagrant
+<<<<<<< HEAD
 Berksfile.lock
 *~
 *#
@@ -20,4 +24,9 @@ bin/*
 *.lock
 
 .librarian
+=======
+.kitchen
+chefignore
+.tmp
+>>>>>>> _blueprint_docker_centos
 test.txt

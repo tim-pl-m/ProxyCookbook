@@ -29,6 +29,7 @@ RUN apt-get -q update &&\
 # Set user jenkins to the image
 RUN useradd -m -d /home/jenkins -s /bin/sh jenkins &&\
     echo "jenkins:jenkins" | chpasswd
+<<<<<<< HEAD
 # TODO: sudo right for user
 # visudo
 # (jenkins    ALL=(ALL:ALL) ALL)
@@ -38,6 +39,8 @@ RUN useradd -m -d /home/jenkins -s /bin/sh jenkins &&\
 
 
 
+=======
+>>>>>>> _blueprint_docker_centos
 
 # Standard SSH port
 EXPOSE 22
@@ -53,11 +56,19 @@ CMD ["/usr/sbin/sshd", "-D"]
 
 sudo apt-get install curl -y
 
+<<<<<<< HEAD
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 source ~/.rvm/scripts/rvm
 rvm install ruby-2.1.6 && use ruby-2.1.6
 source /usr/local/rvm/scripts/rvm
+=======
+# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+# \curl -sSL https://get.rvm.io | bash -s stable --rails
+# source ~/.rvm/scripts/rvm
+# rvm install ruby-2.1.6 && use ruby-2.1.6
+# source /usr/local/rvm/scripts/rvm
+>>>>>>> _blueprint_docker_centos
 
 apt-get install software-properties-common -y
 sudo apt-add-repository ppa:brightbox/ruby-ng -y
@@ -70,6 +81,7 @@ ruby -v
 
 gem install test-kitchen
 gem install bundler
+<<<<<<< HEAD
 
 # ERROR: Failed to build gem native extension.
 # fix:
@@ -89,3 +101,5 @@ chef verify
 # curl -sSL "https://downloads.chef.io/packages-chef-io-public.key" | sudo -E apt-key add -
 # echo "deb https://packages.chef.io/current-apt precise main" | sudo tee -a /etc/apt/sources.list > /dev/null
 # sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install chefdk
+=======
+>>>>>>> _blueprint_docker_centos

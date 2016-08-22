@@ -1,0 +1,4 @@
+package { 'git': }
+
+class { 'jenkins':
+}

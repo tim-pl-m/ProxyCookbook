@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+  # vagrantfiles:
+  #   - Vagrantfile.rb
+
+
+# provisioner:
+#   name: puppet_apply
+#   manifests_path: puppet/environments/manifests
+#   modules_path: puppet/environments/modules/ibs/manifests
+
+
+platforms:
+  - name: centos-6.7-64-nocm
+    driver:
+      vagrantfiles:
+        # TODO problem with puppet apply; module no used?
+        - Vagrantfile.rb
+
+suites:
+  - name: default
