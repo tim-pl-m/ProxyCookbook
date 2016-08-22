@@ -26,8 +26,8 @@ cd jenkins
 
 bundle install
 
-KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen list
-KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen verify --color
+KITCHEN_LOCAL_YAML=.kitchen.docker_remote.yml kitchen list
+KITCHEN_LOCAL_YAML=.kitchen.docker_remote.yml kitchen verify --color
 # KITCHEN_LOCAL_YAML=.kitchen.docker.yml kitchen destroy
 
 #kitchen verify
