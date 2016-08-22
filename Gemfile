@@ -11,8 +11,8 @@ gem 'kitchen-vagrant'
 # gem 'chef-sugar'
 
 # gem 'test-kitchen', '~> 1.2'
-# gem 'kitchen-docker', '~> 2.1.0'
-gem 'kitchen-docker'
+gem 'kitchen-docker', '~> 2.6.0.rc.0'
+# gem 'kitchen-docker'
 # gem 'rake'
 # gem 'rspec'
 
