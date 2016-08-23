@@ -27,6 +27,26 @@ require 'spec_helper'
    end
  end
 
+ describe 'docker-compose installed' do
+   describe command '/usr/local/bin/docker-compose -v' do
+     its(:stdout) { is_expected.to match(/docker-compose version*/) }
+    #  docker-compose version 1.8.0, build f3628c7
+   end
+
+  #  Ensure the correct image was pulled
+    describe command('docker ps -f name=nginx_web_server_1 | awk \'BEGIN{FS="  +"} NR > 1 { print $2 }\'') do
+      its(:exit_status) { should eq 0 }
+      its(:stdout) { should eq "nginx\n" }
+    end
+
+    # Ensure the first specified nginx container is up
+    describe command('docker ps -q -f name=nginx_web_server_1 | wc -l') do
+      its(:exit_status) { should eq 0 }
+      its(:stdout) { should eq "1\n" }
+    end
+
+ end
+
 #TODO halts on jenkins
  # describe 'packer installed' do
  #   describe command 'packer -v' do
