@@ -41,7 +41,7 @@ script:
   # - cd c/cd
 
   # TODO: plugins-problem
-  - cd c/ci-role
+  - cd jenkins
 
   # - cd c/cj
 
