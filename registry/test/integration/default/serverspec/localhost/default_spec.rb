@@ -32,31 +32,48 @@ require 'spec_helper'
      its(:stdout) { is_expected.to match(/docker-compose version*/) }
     #  docker-compose version 1.8.0, build f3628c7
    end
-
-  #  Ensure the correct image was pulled
-    describe command('docker ps -f name=nginx_web_server_1 | awk \'BEGIN{FS="  +"} NR > 1 { print $2 }\'') do
-      its(:exit_status) { should eq 0 }
-      its(:stdout) { should eq "nginx\n" }
-    end
-
-    # Ensure the first specified nginx container is up
-    describe command('docker ps -q -f name=nginx_web_server_1 | wc -l') do
-      its(:exit_status) { should eq 0 }
-      its(:stdout) { should eq "1\n" }
-    end
-
  end
 
-#TODO halts on jenkins
- # describe 'packer installed' do
- #   describe command 'packer -v' do
- #     its(:stdout) { is_expected.to match(/0.8.5/) }
- #    # 0.8.5
- #   end
- # end
+ describe 'docker-registry configured' do
+   #  Ensure the correct image was pulled
+     describe command('docker ps -f name=registry_registry_1 | awk \'BEGIN{FS="  +"} NR > 1 { print $2 }\'') do
+       its(:exit_status) { should eq 0 }
+       its(:stdout) { should eq "registry:2\n" }
+     end
 
-# docker-compose -v
-#  docker-compose version: 1.4.0
+     # Ensure the first specified nginx container is up
+     describe command('docker ps -q -f name=registry_registry_1 | wc -l') do
+       its(:exit_status) { should eq 0 }
+       its(:stdout) { should eq "1\n" }
+     end
+
+     describe command('docker ps -q -f name=registry_registry_1 | wc -l') do
+       its(:exit_status) { should eq 0 }
+       its(:stdout) { should eq "1\n" }
+     end
+ end
+
+  describe 'test registry locally' do
+    # TODO remove image after tests
+    # docker pull ubuntu && docker tag ubuntu localhost:5000/ubuntu
+    describe command('docker pull ubuntu && docker tag ubuntu localhost:5000/ubuntu') do
+      its(:exit_status) { should eq 0 }
+      its(:stdout) { is_expected.to match(/ubuntu:latest/) }
+    end
+    # docker push localhost:5000/ubuntu
+    describe command('docker push localhost:5000/ubuntu') do
+      its(:exit_status) { should eq 0 }
+      its(:stdout) { is_expected.to match(/size: 1150/) }
+    end
+    # docker pull localhost:5000/ubuntu
+    describe command('docker pull localhost:5000/ubuntu') do
+      its(:exit_status) { should eq 0 }
+      its(:stdout) { is_expected.to match(/Image is up to date/) }
+    end
+
+  end
+
+ # registry:2
 
 
 
