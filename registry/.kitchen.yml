@@ -8,6 +8,11 @@ provisioner:
 platforms:
   # - name: ubuntu-14.04
   - name: centos-7.2
+  # TODO docker-compose requires a Docker Engine of version 1.9.0 or greater; use earlier version of d-c?
+  # - name: centos-6.7-64-nocm
+  #   driver:
+  #     box: alltiersolutions/centos-6.7-64-nocm
+  #     box_url: https://atlas.hashicorp.com/alltiersolutions/boxes/centos-6.7-64-nocm
 
 suites:
   - name: default
